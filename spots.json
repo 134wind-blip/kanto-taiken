@@ -1,600 +1,1030 @@
 [
-  {
-    "id": 1,
-    "name": "着物レンタルVASARA 浅草寺店",
-    "area": "浅草",
-    "address": "台東区浅草2-1-3",
-    "category": "着物・浴衣",
-    "emoji": "👘",
-    "image": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80",
-    "price": 3280,
-    "priceLabel": "¥3,280〜",
-    "unit": "1名",
-    "rating": 4.7,
-    "reviews": 482,
-    "desc": "浅浅草寺・雷門のすぐそば！品揃えが豊富で、着付けからヘアセットまでプロがトータルコーディネートします。手ぶらでOK。",
-    "tags": ["カップル", "家族", "駅チカ", "ヘアセット込み", "手ぶらOK"],
-    "badges": ["couple","family","popular"],
-    "popular": 10,
-    "isNew": false,
-    "bookUrl": "https://www.asoview.com/base/151608/",
-    "hours": "9:00〜18:00（最終返却17:30）",
-    "duration": "約1時間（着付け時間）",
-    "reviews_data": [
-      {"author":"マイ", "stars":5, "date":"2026-04-10", "text":"着物の種類がとにかく多くて迷いましたが、スタッフさんが優しくアドバイスしてくれました。髪型も可愛くセットしてもらえて大満足です！"},
-      {"author":"タカシ", "stars":4, "date":"2026-03-20", "text":"彼女とのデートで利用しました。メンズも種類があって良かったです。浅草寺まで歩いてすぐなので非常に便利。"}
-    ]
-  },
-  {
-    "id": 2,
-    "name": "梨花和服 浅草店",
-    "area": "浅草",
-    "address": "台東区雷門2-20-3",
-    "category": "着物・浴衣",
-    "emoji": "👘",
-    "image": "https://images.unsplash.com/photo-1490730141103-6cac27aaab94?auto=format&fit=crop&w=600&q=80",
-    "price": 3000,
-    "priceLabel": "¥3,000〜",
-    "unit": "1名",
-    "rating": 4.8,
-    "reviews": 612,
-    "desc": "レトロ着物やレース着物などトレンドの可愛い着物が大人気！学割やカップル割引プランが豊富で若い世代に支持されています。",
-    "tags": ["カップル", "学割あり", "レトロ着物", "人気店", "手ぶらOK"],
-    "badges": ["couple","popular"],
-    "popular": 9,
-    "isNew": false,
-    "bookUrl": "https://www.asoview.com/base/151915/",
-    "hours": "9:00〜18:00（最終返却17:30）",
-    "duration": "約45分（着付け時間）",
-    "reviews_data": [
-      {"author":"しおり", "stars":5, "date":"2026-05-01", "text":"流行りのレース着物をレンタルしました！小物も可愛くて、SNS映えする写真がたくさん撮れました。また利用したいです。"},
-      {"author":"ケンタ", "stars":5, "date":"2026-04-18", "text":"カップルプランがお得でした。着付けもスムーズで、受付から出発までストレスなく楽しめました。"}
-    ]
-  },
-  {
-    "id": 3,
-    "name": "手ぶらで着物レンタル 大吉",
-    "area": "浅草",
-    "address": "台東区浅草1-33-8-2F",
-    "category": "着物・浴衣",
-    "emoji": "👘",
-    "image": "https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&fit=crop&w=600&q=80",
-    "price": 2900,
-    "priceLabel": "¥2,900〜",
-    "unit": "1名",
-    "rating": 4.6,
-    "reviews": 354,
-    "desc": "圧倒的な格安プランと、店内スタジオでのプロカメラマンによる無料撮影サービスが大好評！子供用サイズも充実。",
-    "tags": ["家族", "子供サイズあり", "写真撮影サービス", "格安", "手ぶらOK"],
-    "badges": ["family"],
-    "popular": 8,
-    "isNew": false,
-    "bookUrl": "https://www.asoview.com/base/152811/",
-    "hours": "9:30〜18:00",
-    "duration": "約1時間（撮影込）",
-    "reviews_data": [
-      {"author":"えみ", "stars":5, "date":"2026-03-12", "text":"家族4人で利用。子供用の可愛い着物もあって良かったです。店内のスタジオで写真を撮ってもらえるのが本当に豪華でした！"},
-      {"author":"ひろき", "stars":4, "date":"2026-02-28", "text":"コスパが良すぎます。スタッフの方もとても親切で、アットホームな雰囲気の中で選べました。"}
-    ]
-  },
-  {
-    "id": 4,
-    "name": "ワークスタジオ瑠花（るか）",
-    "area": "鎌倉",
-    "address": "鎌倉市由比ヶ浜1-1-10",
-    "category": "ものづくり",
-    "emoji": "💍",
-    "image": "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600&q=80",
-    "price": 6000,
-    "priceLabel": "¥6,000〜",
-    "unit": "1名",
-    "rating": 4.9,
-    "reviews": 820,
-    "desc": "鎌倉駅徒歩6分。国家資格を持つ本物の彫金職人がマンツーマンで指導。世界に一つのシルバーリングが作れます。当日持ち帰りOK！",
-    "tags": ["カップル", "記念日", "刻印無料", "当日持ち帰り", "完全予約制"],
-    "badges": ["couple","popular"],
-    "popular": 10,
-    "isNew": false,
-    "bookUrl": "https://www.asoview.com/base/151513/",
-    "hours": "10:00〜18:00（最終受付16:30）",
-    "duration": "約90分",
-    "reviews_data": [
-      {"author":"ユウカ", "stars":5, "date":"2026-04-20", "text":"記念日にペアリングを作りました！トントン叩いて磨く作業がすごく楽しくて、お揃いの指輪が作れて最高の思い出になりました。"},
-      {"author":"ショウ", "stars":5, "date":"2026-03-15", "text":"職人さんの教え方が丁寧で面白く、不器用な自分でも綺麗に仕上がりました。刻印もその場で入れてもらえます！"}
-    ]
-  },
-  {
-    "id": 5,
-    "name": "glanta（グレンタ）鎌倉店",
-    "area": "鎌倉",
-    "address": "鎌倉市扇ガ谷1-8-4",
-    "category": "ものづくり",
-    "emoji": "💍",
-    "image": "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=600&q=80",
-    "price": 5500,
-    "priceLabel": "¥5,500〜",
-    "unit": "1名",
-    "rating": 4.7,
-    "reviews": 245,
-    "desc": "お洒落で温かみのあるアトリエで、自分好みの太さやデザインのオリジナルリングを制作。当日その場で職人が仕上げてくれます。",
-    "tags": ["カップル", "レトロアトリエ", "当日持ち帰り", "お洒落"],
-    "badges": ["couple","new"],
-    "popular": 8,
-    "isNew": true,
-    "bookUrl": "https://www.asoview.com/base/157295/",
-    "hours": "10:00〜18:30",
-    "duration": "約60分",
-    "reviews_data": [
-      {"author":"さくら", "stars":5, "date":"2026-05-02", "text":"店内の雰囲気がすごくお洒落で入るだけでテンションが上がります。友達同士で可愛いピンキーリングを作りました！"},
-      {"author":"りく", "stars":4, "date":"2026-04-10", "text":"シンプルなデザインから槌目（つちめ）模様まで選べて楽しい。鎌倉観光の途中でサクッと作れるのが良いですね。"}
-    ]
-  },
-  {
-    "id": 6,
-    "name": "やまに大塚 陶芸教室",
-    "area": "秩父",
-    "address": "栃木県芳賀郡益子町城内坂88",
-    "category": "ものづくり",
-    "emoji": "🏺",
-    "image": "https://images.unsplash.com/photo-1565192647048-f997ded879ab?auto=format&fit=crop&w=600&q=80",
-    "price": 2800,
-    "priceLabel": "¥2,800〜",
-    "unit": "1名",
-    "rating": 4.8,
-    "reviews": 412,
-    "desc": "益子焼の伝統ある老舗窯元が運営する陶芸教室。初めての方でも電動ろくろを使って本格的な器づくりが体験できます。後日郵送。",
-    "tags": ["家族", "初心者歓迎", "子供体験可", "窯元直営", "作品郵送"],
-    "badges": ["family","popular"],
-    "popular": 9,
-    "isNew": false,
-    "bookUrl": "https://www.asoview.com/base/831/",
-    "hours": "9:30〜16:00",
-    "duration": "約1時間30分",
-    "reviews_data": [
-      {"author":"まさとし", "stars":5, "date":"2026-04-05", "text":"子供（8歳）と一緒に電動ろくろに挑戦！先生が手元をしっかり支えてくれるので、形が崩れることなく綺麗なお茶碗が完成しました。"},
-      {"author":"はるな", "stars":4, "date":"2026-03-18", "text":"土を触るのがとても気持ちよく、癒されました。焼き上がって届いたお皿を使うたびに益子旅行を思い出します！"}
-    ]
-  },
-  {
-    "id": 7,
-    "name": "長谷川陶苑",
-    "area": "秩父",
-    "address": "栃木県芳賀郡益子町益子4294",
-    "category": "ものづくり",
-    "emoji": "🏺",
-    "image": "https://images.unsplash.com/photo-1576016770956-debb63d900ef?auto=format&fit=crop&w=600&q=80",
-    "price": 2500,
-    "priceLabel": "¥2,500〜",
-    "unit": "1名",
-    "rating": 4.6,
-    "reviews": 318,
-    "desc": "創業100年以上の歴史。手びねり、電動ろくろ、絵付けなど、好みに合わせたプランが選択可能。広々とした自然豊かな工房です。",
-    "tags": ["家族", "手びねりあり", "絵付けあり", "歴史ある工房", "駐車場完備"],
-    "badges": ["family"],
-    "popular": 8,
-    "isNew": false,
-    "bookUrl": "https://www.asoview.com/base/136545/",
-    "hours": "9:00〜17:00",
-    "duration": "約2時間",
-    "reviews_data": [
-      {"author":"かずこ", "stars":5, "date":"2026-02-20", "text":"手びねりでオリジナルのマグカップを作りました。型にとらわれず自由に作らせてくれるので、子供の独創的な作品ができて楽しかったです。"},
-      {"author":"たろう", "stars":4, "date":"2026-01-15", "text":"アットホームで素晴らしい工房でした。体験料もリーズナブルで、また違うプランで訪れたいです。"}
-    ]
-  },
-  {
-    "id": 8,
-    "name": "益子陶芸倶楽部",
-    "area": "秩父",
-    "address": "栃木県芳賀郡益子町益子3265-1",
-    "category": "ものづくり",
-    "emoji": "🏺",
-    "image": "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=600&q=80",
-    "price": 3000,
-    "priceLabel": "¥3,000〜",
-    "unit": "1名",
-    "rating": 4.7,
-    "reviews": 182,
-    "desc": "里山の静かな古民家で本格的な陶芸体験。併設の宿泊施設もあり、ゆったりと田舎の空気を感じながら作陶に打ち込めます。",
-    "tags": ["一人旅歓迎", "古民家アトリエ", "宿泊プランあり", "静かな環境"],
-    "badges": [],
-    "popular": 7,
-    "isNew": false,
-    "bookUrl": "https://www.asoview.com/base/153905/",
-    "hours": "9:00〜17:00",
-    "duration": "約2時間",
-    "reviews_data": [
-      {"author":"コウジ", "stars":5, "date":"2026-04-12", "text":"のんびりとした雰囲気の中で、土に向き合う時間が最高でした。都会の喧騒を離れてリフレッシュしたい人には本当におすすめです。"},
-      {"author":"ちえ", "stars":4, "date":"2026-03-01", "text":"古民家がとても素敵でした！スタッフさんの指導も優しく、納得のいくお皿が焼けました。"}
-    ]
-  },
-  {
-    "id": 9,
-    "name": "箱根強羅公園 クラフトハウス",
-    "area": "箱根",
-    "address": "神奈川県足柄下郡箱根町強羅1300",
-    "category": "アート",
-    "emoji": "🎨",
-    "image": "https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?auto=format&fit=crop&w=600&q=80",
-    "price": 3800,
-    "priceLabel": "¥3,800〜",
-    "unit": "1名",
-    "rating": 4.7,
-    "reviews": 512,
-    "desc": "箱根強羅公園内のお洒落なスタジオ。吹きガラス、サンドブラスト、陶芸、とんぼ玉、ドライフラワーアレンジなど多種多様なクラフトが揃っています。",
-    "tags": ["カップル", "家族", "多ジャンル", "強羅公園内", "お洒落"],
-    "badges": ["couple","family","popular"],
-    "popular": 10,
-    "isNew": false,
-    "bookUrl": "https://www.asoview.com/base/162058/",
-    "hours": "9:00〜17:00",
-    "duration": "約1〜2時間（体験による）",
-    "reviews_data": [
-      {"author":"ゆり", "stars":5, "date":"2026-05-03", "text":"吹きガラス体験をしました！ガラスが赤く光る様子を間近で見られて興奮。スタッフさんがつきっきりで手伝ってくれるので安心です。"},
-      {"author":"としき", "stars":4, "date":"2026-04-22", "text":"強羅公園観光とセットで楽しめるのが最高。サンドブラストでグラスを作りましたが、簡単でクオリティの高いものが作れました。"}
-    ]
-  },
-  {
-    "id": 10,
-    "name": "仙石窯",
-    "area": "箱根",
-    "address": "神奈川県足柄下郡箱根町仙石原1246-277",
-    "category": "アート",
-    "emoji": "🏺",
-    "image": "https://images.unsplash.com/photo-1565192647048-f997ded879ab?auto=format&fit=crop&w=600&q=80",
-    "price": 4000,
-    "priceLabel": "¥4,000〜",
-    "unit": "1名",
-    "rating": 4.6,
-    "reviews": 114,
-    "desc": "仙石原の自然豊かな別荘地にある隠れ家的陶芸窯。静かな森の中で、自分好みの器作りに没頭できます。デートにもおすすめ。",
-    "tags": ["カップル", "隠れ家アトリエ", "静かな自然", "マンツーマン指導"],
-    "badges": ["couple"],
-    "popular": 8,
-    "isNew": false,
-    "bookUrl": "https://www.asoview.com/base/136298/",
-    "hours": "10:00〜16:00",
-    "duration": "約2時間",
-    "reviews_data": [
-      {"author":"ミサキ", "stars":5, "date":"2026-03-29", "text":"仙石原の静かな森の中で陶芸ができるのが贅沢！先生が面白い方で、コツを丁寧に教えてくれました。届いた器、毎日愛用しています。"},
-      {"author":"たくや", "stars":4, "date":"2026-02-14", "text":"本格的なろくろ体験。静かな環境で集中して土をこねる時間が日常を忘れさせてくれました。"}
-    ]
-  },
-  {
-    "id": 11,
-    "name": "和思工房 和紙の庵",
-    "area": "箱根",
-    "address": "神奈川県足柄下郡箱根町湯本498",
-    "category": "アート",
-    "emoji": "🎨",
-    "image": "https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=600&q=80",
-    "price": 3500,
-    "priceLabel": "¥3,500〜",
-    "unit": "1名",
-    "rating": 4.5,
-    "reviews": 68,
-    "desc": "箱根湯本駅から徒歩圏内。伝統的な越前和紙づくりの技法を用いて、オリジナルのはがきやランプシェードを制作できます。",
-    "tags": ["家族", "駅チカ", "伝統工芸", "和紙ランプ", "持ち帰り可"],
-    "badges": ["family","new"],
-    "popular": 7,
-    "isNew": true,
-    "bookUrl": "https://www.asoview.com/base/164273/",
-    "hours": "10:00〜16:00",
-    "duration": "約90分",
-    "reviews_data": [
-      {"author":"はるえ", "stars":5, "date":"2026-04-15", "text":"和紙の中に押し花を散りばめたオリジナルはがきを作りました。温かみのある作品が仕上がってとても嬉しかったです。"},
-      {"author":"ゆうと", "stars":4, "date":"2026-03-10", "text":"子供と一緒に参加しました。和紙の繊維をすくう作業が新鮮で、非常に教育的でした。"}
-    ]
-  },
-  {
-    "id": 12,
-    "name": "GLASS STUDIO PUNTY",
-    "area": "日光",
-    "address": "栃木県日光市所野1543-563",
-    "category": "伝統文化",
-    "emoji": "🏺",
-    "image": "https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?auto=format&fit=crop&w=600&q=80",
-    "price": 3850,
-    "priceLabel": "¥3,850〜",
-    "unit": "1名",
-    "rating": 4.8,
-    "reviews": 210,
-    "desc": "日光の霧降高原にあるガラススタジオ。吹きガラスやサンドブラスト、とんぼ玉制作などを体験できます。日光の思い出に美しいガラス作品を。",
-    "tags": ["カップル", "家族", "吹きガラスあり", "観光地近く", "お洒落"],
-    "badges": ["couple","family","popular"],
-    "popular": 9,
-    "isNew": false,
-    "bookUrl": "https://www.asoview.com/base/590/",
-    "hours": "9:30〜17:00",
-    "duration": "約1〜2時間（プランによる）",
-    "reviews_data": [
-      {"author":"なおこ", "stars":5, "date":"2026-04-30", "text":"吹きガラスでグラスを作成しました。ガラスの色や形を自分でカスタマイズできて、世界に一つだけのグラスができて感動！日光観光でおすすめです。"},
-      {"author":"こうへい", "stars":5, "date":"2026-03-11", "text":"スタッフの皆さんがとてもフレンドリーで親切。楽しく作業ができました。吹きガラスはスリルもあって楽しかったです！"}
-    ]
-  },
-  {
-    "id": 13,
-    "name": "そば処 満留賀（まるか）",
-    "area": "川越",
-    "address": "埼玉県朝霞市膝折町2-13-16",
-    "category": "料理・食",
-    "emoji": "🍜",
-    "image": "https://images.unsplash.com/photo-1618090584126-129cd1f3f94c?auto=format&fit=crop&w=600&q=80",
-    "price": 2500,
-    "priceLabel": "¥2,500〜",
-    "unit": "1名",
-    "rating": 4.9,
-    "reviews": 320,
-    "desc": "プロのそば職人が教える本格的なそば打ち体験教室。打ちたて・茹でたての香り高いお蕎麦をその場で試食できます。英語対応可。",
-    "tags": ["家族", "子供可", "食事付き", "職人が指導", "初心者OK"],
-    "badges": ["family","popular"],
-    "popular": 9,
-    "isNew": false,
-    "bookUrl": "https://www.asoview.com/base/151143/",
-    "hours": "10:30〜 / 16:30〜（予約制）",
-    "duration": "約2時間（試食込み）",
-    "reviews_data": [
-      {"author":"しんじ", "stars":5, "date":"2026-05-04", "text":"本格的なそば粉をこねて、伸ばして、細く切る作業がすごく楽しくて、自分で打った蕎麦は喉越しが良くて格別に美味しかったです！"},
-      {"author":"まゆみ", "stars":5, "date":"2026-04-18", "text":"子供連れで参加しました。職人さんが子供に優しく教えてくれたので、家族で美味しいお蕎麦が作れて大満足です。"}
-    ]
-  },
-  {
-    "id": 14,
-    "name": "キヨコフラワーデザインスクール&メリアクッキングサロン",
-    "area": "横浜",
-    "address": "神奈川県横浜市中区",
-    "category": "料理・食",
-    "emoji": "🍽️",
-    "image": "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=600&q=80",
-    "price": 6000,
-    "priceLabel": "¥6,000〜",
-    "unit": "1名",
-    "rating": 4.6,
-    "reviews": 89,
-    "desc": "横浜の洗練されたサロンで、お洒落な創作和菓子や季節のパン作りを体験。少人数制で丁寧に教えます。デートにもおすすめ。",
-    "tags": ["カップル", "お洒落サロン", "和菓子づくり", "少人数制", "食事付き"],
-    "badges": ["couple"],
-    "popular": 8,
-    "isNew": false,
-    "bookUrl": "https://www.asoview.com/base/149602/",
-    "hours": "10:30〜15:30",
-    "duration": "約2時間30分（試食込み）",
-    "reviews_data": [
-      {"author":"リカ", "stars":5, "date":"2026-04-15", "text":"練り切りという伝統和菓子を作りました！デザインがすごく可愛くて、食べるのがもったいなかったです。お茶と一緒に美味しくいただきました。"},
-      {"author":"ともひろ", "stars":4, "date":"2026-03-22", "text":"妻と一緒にパン作り体験。サロンの雰囲気が良く、落ち着いて美味しいパンが焼き上がりました。"}
-    ]
-  },
-  {
-    "id": 15,
-    "name": "小松沢レジャー農園",
-    "area": "秩父",
-    "address": "埼玉県秩父郡横瀬町大字横瀬1408",
-    "category": "農業体験",
-    "emoji": "🌱",
-    "image": "https://images.unsplash.com/photo-1464965911861-746a04b4bca6?auto=format&fit=crop&w=600&q=80",
-    "price": 2800,
-    "priceLabel": "¥2,800〜",
-    "unit": "1名",
-    "rating": 4.8,
-    "reviews": 750,
-    "desc": "秩父最大級の体験農園！いちご・ぶどう・しいたけ狩り、川魚のつかみ取り、手打ちうどん体験、BBQなど、1日中里山で遊べる大人気スポット。",
-    "tags": ["家族", "子供に大人気", "味覚狩り", "BBQ併設", "駐車場無料"],
-    "badges": ["family","popular"],
-    "popular": 10,
-    "isNew": false,
-    "bookUrl": "https://www.asoview.com/base/159918/",
-    "hours": "10:00〜16:00",
-    "duration": "約2〜4時間（プランによる）",
-    "reviews_data": [
-      {"author":"だいすけ", "stars":5, "date":"2026-05-02", "text":"子供連れでしいたけ狩りと川魚つかみ取りを体験！採ったしいたけと魚をその場で焼いて食べられるのが本当に最高の贅沢でした。"},
-      {"author":"かな", "stars":5, "date":"2026-04-25", "text":"いちご狩りプランで参加。すごく甘くて大きないちごが食べ放題で幸せでした。園内が綺麗で大満足です！"}
-    ]
-  },
-  {
-    "id": 16,
-    "name": "アムスハウス＆フレンズ",
-    "area": "秩父",
-    "address": "埼玉県秩父郡長瀞町本野上367-1",
-    "category": "農業体験",
-    "emoji": "🚣",
-    "image": "https://images.unsplash.com/photo-1530866495561-507c9faab2ed?auto=format&fit=crop&w=600&q=80",
-    "price": 6000,
-    "priceLabel": "¥6,000〜",
-    "unit": "1名",
-    "rating": 4.9,
-    "reviews": 540,
-    "desc": "長瀞の荒川で大迫力のラフティング体験！資格を持つプロガイドが同乗し、安全第一でスリリングな川下りを提供。写真データ無料進呈。",
-    "tags": ["カップル", "グループ歓迎", "水濡れ必須", "プロガイド同乗", "写真無料"],
-    "badges": ["couple","popular"],
-    "popular": 9,
-    "isNew": false,
-    "bookUrl": "https://www.asoview.com/base/58/",
-    "hours": "8:30〜17:00",
-    "duration": "約3時間",
-    "reviews_data": [
-      {"author":"ショウタ", "stars":5, "date":"2026-05-05", "text":"長瀞ラフティング最高でした！激流を下るスリルと、途中の緩やかな場所で川に飛び込んで遊ぶのが本当に楽しくて、ガイドさんの盛り上げも抜群でした！"},
-      {"author":"ゆみこ", "stars":5, "date":"2026-04-29", "text":"ツアー中の写真を無料でたくさんもらえるのが嬉しかったです。スタッフみんな明るく親切で、夏に絶対また来ます！"}
-    ]
-  },
-  {
-    "id": 17,
-    "name": "アウトドアセンター長瀞",
-    "area": "秩父",
-    "address": "埼玉県秩父郡長瀞町長瀞1429",
-    "category": "農業体験",
-    "emoji": "🚣",
-    "image": "https://images.unsplash.com/photo-1530866495561-507c9faab2ed?auto=format&fit=crop&w=600&q=80",
-    "price": 6000,
-    "priceLabel": "¥6,000〜",
-    "unit": "1名",
-    "rating": 4.7,
-    "reviews": 380,
-    "desc": "長瀞駅から徒歩圏内の好立地。荒川の急流を下る大人気ラフティング！小学1年生から参加可能なファミリープランもありご家族連れに大人気。",
-    "tags": ["家族", "子供可", "駅チカ", "手ぶらOK", "温水シャワーあり"],
-    "badges": ["family"],
-    "popular": 8,
-    "isNew": false,
-    "bookUrl": "https://www.asoview.com/base/416/",
-    "hours": "9:00〜17:00",
-    "duration": "約2時間30分",
-    "reviews_data": [
-      {"author":"ひろし", "stars":5, "date":"2026-04-30", "text":"子供2人（小3、小5）を連れて参加。怖がるかと思いましたが、ガイドさんのトークが面白くて大はしゃぎ！家族全員ビショビショになりながら大満足でした。"},
-      {"author":"マサミ", "stars":4, "date":"2026-03-21", "text":"長瀞駅のすぐ近くで受付できるので便利。更衣室や温水シャワーもしっかり完備されていて、快適に遊べました。"}
-    ]
-  },
-  {
-    "id": 18,
-    "name": "忍者カフェ浅草",
-    "area": "浅草",
-    "address": "台東区西浅草3-27-14",
-    "category": "伝統文化",
-    "emoji": "🥷",
-    "image": "https://images.unsplash.com/photo-1555448248-2571daf6344b?auto=format&fit=crop&w=600&q=80",
-    "price": 3800,
-    "priceLabel": "¥3,800〜",
-    "unit": "1名",
-    "rating": 4.8,
-    "reviews": 310,
-    "desc": "忍者衣装に身を包み、手裏剣投げ・吹き矢・抜刀術といった本格的な修行を体験できるエンタメカフェ！子供から大人、外国人観光客まで大人気。",
-    "tags": ["家族", "子供可", "エンタメ", "衣装レンタル込", "屋内施設"],
-    "badges": ["family","popular"],
-    "popular": 10,
-    "isNew": false,
-    "bookUrl": "https://www.asoview.com/base/154743/",
-    "hours": "10:00〜18:00",
-    "duration": "約1時間30分",
-    "reviews_data": [
-      {"author":"さやか", "stars":5, "date":"2026-04-28", "text":"息子が忍者に変身して手裏剣修行！抜刀のポーズを真剣に教わっている姿がとても格好良く、家族の良い記念になりました。"},
-      {"author":"John", "stars":5, "date":"2026-04-12", "text":"Amazing experience in Asakusa! Throwing shuriken (ninja stars) was so much fun. The staff were energetic and made it a memorable ninja training."}
-    ]
-  },
-  {
-    "id": 19,
-    "name": "SAMURAI Project",
-    "area": "鎌倉",
-    "address": "鎌倉市山ノ内501（円覚寺塔頭）",
-    "category": "癒し・禅",
-    "emoji": "🧘",
-    "image": "https://images.unsplash.com/photo-1545389336-cf090694435e?auto=format&fit=crop&w=600&q=80",
-    "price": 2500,
-    "priceLabel": "¥2,500〜",
-    "unit": "1名",
-    "rating": 4.9,
-    "reviews": 120,
-    "desc": "北鎌倉の名刹・円覚寺のお寺の静寂な空間で、本格的な坐禅体験と写経や禅アートを体験。日々の雑念を払い、静かに心を調える特別な時間を。",
-    "tags": ["一人OK", "静寂体験", "お寺で開催", "伝統文化", "リフレッシュ"],
-    "badges": ["popular"],
-    "popular": 9,
-    "isNew": false,
-    "bookUrl": "https://www.asoview.com/base/150308/",
-    "hours": "13:30〜 / 15:30〜",
-    "duration": "約90分",
-    "reviews_data": [
-      {"author":"ちひろ", "stars":5, "date":"2026-05-02", "text":"お寺の清らかな空気の中で呼吸を整える坐禅は、日々のストレスがすーっと消えていくようでした。住職さんのお話も大変ためになりました。"},
-      {"author":"ゆうすけ", "stars":5, "date":"2026-04-10", "text":"静寂の中での精神統一。心が穏やかになる素晴らしい体験でした。鎌倉に来たら一度は体験すべきです。"}
-    ]
-  },
-  {
-    "id": 20,
-    "name": "横浜SUP倶楽部",
-    "area": "横浜",
-    "address": "横浜市中区日ノ出町2-166",
-    "category": "アウトドア",
-    "emoji": "🏄",
-    "image": "https://images.unsplash.com/photo-1517164850305-99a3e65bb47e?auto=format&fit=crop&w=600&q=80",
-    "price": 5000,
-    "priceLabel": "¥5,000〜",
-    "unit": "1名",
-    "rating": 4.8,
-    "reviews": 198,
-    "desc": "横浜の大岡川からみなとみらいへ漕ぎ出すシティSUP体験ツアー！街と海を水上から見上げる非日常の絶景が楽しめます。初心者大歓迎。",
-    "tags": ["カップル", "シティ絶景", "SUPA公認スクール", "水上散歩", "初心者歓迎"],
-    "badges": ["couple","popular"],
-    "popular": 9,
-    "isNew": false,
-    "bookUrl": "https://www.asoview.com/base/151847/",
-    "hours": "9:00〜17:00",
-    "duration": "約2時間",
-    "reviews_data": [
-      {"author":"しんや", "stars":5, "date":"2026-05-03", "text":"みなとみらいのビル群を水上から眺める体験は格別！ガイドさんが落ちないように優しく教えてくれたので、一度も落水せずに楽しめました。"},
-      {"author":"めぐみ", "stars":4, "date":"2026-04-20", "text":"川から海へ出ていくルートが新鮮でした。お天気も良く水上散歩は最高の運動になります。写真もたくさん撮ってもらえました！"}
-    ]
-  },
-  {
-    "id": 21,
-    "name": "水辺荘",
-    "area": "横浜",
-    "address": "横浜市中区黄金町1-2丙",
-    "category": "アウトドア",
-    "emoji": "🏄",
-    "image": "https://images.unsplash.com/photo-1517164850305-99a3e65bb47e?auto=format&fit=crop&w=600&q=80",
-    "price": 4500,
-    "priceLabel": "¥4,500〜",
-    "unit": "1名",
-    "rating": 4.7,
-    "reviews": 134,
-    "desc": "横浜の大岡川沿いのレトロな高架下の水辺を拠点とするSUP・カヤックスクール。アットホームで初心者も安心してパドル操作が学べます。",
-    "tags": ["一人歓迎", "リバーSUP", "アットホーム", "初心者歓迎", "駅チカ"],
-    "badges": [],
-    "popular": 7,
-    "isNew": false,
-    "bookUrl": "https://www.asoview.com/base/1967/",
-    "hours": "10:00〜16:00",
-    "duration": "約90分",
-    "reviews_data": [
-      {"author":"あやか", "stars":5, "date":"2026-03-15", "text":"初めてのSUPでしたが、ボードが大きくて安定していてすぐに立てました。黄金町の桜並木を川から見上げられて感動です！"},
-      {"author":"けんご", "stars":4, "date":"2026-02-28", "text":"フレンドリーなインストラクターさんのおかげで楽しく過ごせました。また暖かい季節に予約したいです。"}
-    ]
-  },
-  {
-    "id": 22,
-    "name": "川越体験工房青い鳥",
-    "area": "川越",
-    "address": "埼玉県川越市幸町5-4",
-    "category": "アート",
-    "emoji": "🎨",
-    "image": "https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=600&q=80",
-    "price": 3000,
-    "priceLabel": "¥3,000〜",
-    "unit": "1名",
-    "rating": 4.7,
-    "reviews": 280,
-    "desc": "川越の「蔵造りの街並み」にあるガラス体験工房。吹きガラス、サンドブラスト、とんぼ玉、彫りガラスなどの体験が充実。おみやげに最適。",
-    "tags": ["家族", "カップル", "蔵の街並み", "当日持ち帰り可", "ガラス工芸"],
-    "badges": ["family","couple","popular"],
-    "popular": 9,
-    "isNew": false,
-    "bookUrl": "https://www.asoview.com/base/599/",
-    "hours": "10:00〜18:00",
-    "duration": "約1〜2時間",
-    "reviews_data": [
-      {"author":"ゆき", "stars":5, "date":"2026-04-29", "text":"とんぼ玉のストラップを作りました！ガラスが熱でとろける様子がおもしろく、綺麗なガラス玉が仕上がりました。川越散策でおすすめです。"},
-      {"author":"りゅうじ", "stars":4, "date":"2026-03-12", "text":"サンドブラストでマグカップに絵付けしました。カッターで模様を切り抜く作業が集中できて楽しく、良いお土産になりました。"}
-    ]
-  },
-  {
-    "id": 23,
-    "name": "glanta（グレンタ）川越店",
-    "area": "川越",
-    "address": "埼玉県川越市新富町1-11",
-    "category": "アート",
-    "emoji": "💍",
-    "image": "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600&q=80",
-    "price": 4000,
-    "priceLabel": "¥4,000〜",
-    "unit": "1名",
-    "rating": 4.8,
-    "reviews": 110,
-    "desc": "小江戸川越の散策に合わせたオリジナルリング（指輪）手作り体験！その場ですぐに制作できて持ち換えます。デートや女子旅に最適。",
-    "tags": ["カップル", "女子旅", "当日持ち帰り", "お洒落", "小江戸川越"],
-    "badges": ["couple","new"],
-    "popular": 8,
-    "isNew": true,
-    "bookUrl": "https://www.asoview.com/base/157294/",
-    "hours": "10:00〜19:00",
-    "duration": "約45分",
-    "reviews_data": [
-      {"author":"みゆう", "stars":5, "date":"2026-05-01", "text":"小江戸のレトロな街並みを歩いた後に友達と立ち寄りました。好みの太さで可愛いシルバーリングがその場で作れてとても気に入ってます！"},
-      {"author":"しょうへい", "stars":5, "date":"2026-04-18", "text":"彼女へのサプライズでペアリング作り。短時間でお洒落な指輪が完成するので、デートコースのアクセントにぴったりです。"}
-    ]
-  }
+    {
+        "id":  1,
+        "name":  "着物レンタルVASARA 浅草寺店",
+        "area":  "浅草",
+        "address":  "台東区浅草2-1-3",
+        "category":  "着物・浴衣",
+        "emoji":  "👘",
+        "image":  "https://image.asoview-media.com/image/production/acp/3000009206/c1121812-ab1c-492c-845b-5935da76c1be.JPG",
+        "price":  3280,
+        "priceLabel":  "¥3,280〜",
+        "unit":  "1名",
+        "rating":  4.7,
+        "reviews":  482,
+        "desc":  "浅浅草寺・雷門のすぐそば！品揃えが豊富で、着付けからヘアセットまでプロがトータルコーディネートします。手ぶらでOK。",
+        "tags":  [
+                     "カップル",
+                     "家族",
+                     "駅チカ",
+                     "ヘアセット込み",
+                     "手ぶらOK"
+                 ],
+        "badges":  [
+                       "couple",
+                       "family",
+                       "popular"
+                   ],
+        "popular":  10,
+        "isNew":  false,
+        "bookUrl":  "https://www.asoview.com/base/151608/",
+        "hours":  "9:00〜18:00（最終返却17:30）",
+        "duration":  "約1時間（着付け時間）",
+        "reviews_data":  [
+                             {
+                                 "author":  "マイ",
+                                 "stars":  5,
+                                 "date":  "2026-04-10",
+                                 "text":  "着物の種類がとにかく多くて迷いましたが、スタッフさんが優しくアドバイスしてくれました。髪型も可愛くセットしてもらえて大満足です！"
+                             },
+                             {
+                                 "author":  "タカシ",
+                                 "stars":  4,
+                                 "date":  "2026-03-20",
+                                 "text":  "彼女とのデートで利用しました。メンズも種類があって良かったです。浅草寺まで歩いてすぐなので非常に便利。"
+                             }
+                         ]
+    },
+    {
+        "id":  2,
+        "name":  "梨花和服 浅草店",
+        "area":  "浅草",
+        "address":  "台東区雷門2-20-3",
+        "category":  "着物・浴衣",
+        "emoji":  "👘",
+        "image":  "https://image.asoview-media.com/image/production/acp/3000012421/06249e9b-8138-475b-8423-616d666df240.jpg",
+        "price":  3000,
+        "priceLabel":  "¥3,000〜",
+        "unit":  "1名",
+        "rating":  4.8,
+        "reviews":  612,
+        "desc":  "レトロ着物やレース着物などトレンドの可愛い着物が大人気！学割やカップル割引プランが豊富で若い世代に支持されています。",
+        "tags":  [
+                     "カップル",
+                     "学割あり",
+                     "レトロ着物",
+                     "人気店",
+                     "手ぶらOK"
+                 ],
+        "badges":  [
+                       "couple",
+                       "popular"
+                   ],
+        "popular":  9,
+        "isNew":  false,
+        "bookUrl":  "https://www.asoview.com/base/151915/",
+        "hours":  "9:00〜18:00（最終返却17:30）",
+        "duration":  "約45分（着付け時間）",
+        "reviews_data":  [
+                             {
+                                 "author":  "しおり",
+                                 "stars":  5,
+                                 "date":  "2026-05-01",
+                                 "text":  "流行りのレース着物をレンタルしました！小物も可愛くて、SNS映えする写真がたくさん撮れました。また利用したいです。"
+                             },
+                             {
+                                 "author":  "ケンタ",
+                                 "stars":  5,
+                                 "date":  "2026-04-18",
+                                 "text":  "カップルプランがお得でした。着付けもスムーズで、受付から出発までストレスなく楽しめました。"
+                             }
+                         ]
+    },
+    {
+        "id":  3,
+        "name":  "手ぶらで着物レンタル 大吉",
+        "area":  "浅草",
+        "address":  "台東区浅草1-33-8-2F",
+        "category":  "着物・浴衣",
+        "emoji":  "👘",
+        "image":  "https://image.asoview-media.com/image/production/acp/3000012271/75b368f3-ec72-492a-a454-4d762aa06016.jpg",
+        "price":  2900,
+        "priceLabel":  "¥2,900〜",
+        "unit":  "1名",
+        "rating":  4.6,
+        "reviews":  354,
+        "desc":  "圧倒的な格安プランと、店内スタジオでのプロカメラマンによる無料撮影サービスが大好評！子供用サイズも充実。",
+        "tags":  [
+                     "家族",
+                     "子供サイズあり",
+                     "写真撮影サービス",
+                     "格安",
+                     "手ぶらOK"
+                 ],
+        "badges":  [
+                       "family"
+                   ],
+        "popular":  8,
+        "isNew":  false,
+        "bookUrl":  "https://www.asoview.com/base/152811/",
+        "hours":  "9:30〜18:00",
+        "duration":  "約1時間（撮影込）",
+        "reviews_data":  [
+                             {
+                                 "author":  "えみ",
+                                 "stars":  5,
+                                 "date":  "2026-03-12",
+                                 "text":  "家族4人で利用。子供用の可愛い着物もあって良かったです。店内のスタジオで写真を撮ってもらえるのが本当に豪華でした！"
+                             },
+                             {
+                                 "author":  "ひろき",
+                                 "stars":  4,
+                                 "date":  "2026-02-28",
+                                 "text":  "コスパが良すぎます。スタッフの方もとても親切で、アットホームな雰囲気の中で選べました。"
+                             }
+                         ]
+    },
+    {
+        "id":  4,
+        "name":  "ワークスタジオ瑠花（るか）",
+        "area":  "鎌倉",
+        "address":  "鎌倉市由比ヶ浜1-1-10",
+        "category":  "ものづくり",
+        "emoji":  "💍",
+        "image":  "https://image.asoview-media.com/image/production/acp/3000008679/d0c15892-5062-4884-a68e-239e4bfad9e9.JPG",
+        "price":  6000,
+        "priceLabel":  "¥6,000〜",
+        "unit":  "1名",
+        "rating":  4.9,
+        "reviews":  820,
+        "desc":  "鎌倉駅徒歩6分。国家資格を持つ本物の彫金職人がマンツーマンで指導。世界に一つのシルバーリングが作れます。当日持ち帰りOK！",
+        "tags":  [
+                     "カップル",
+                     "記念日",
+                     "刻印無料",
+                     "当日持ち帰り",
+                     "完全予約制"
+                 ],
+        "badges":  [
+                       "couple",
+                       "popular"
+                   ],
+        "popular":  10,
+        "isNew":  false,
+        "bookUrl":  "https://www.asoview.com/base/151513/",
+        "hours":  "10:00〜18:00（最終受付16:30）",
+        "duration":  "約90分",
+        "reviews_data":  [
+                             {
+                                 "author":  "ユウカ",
+                                 "stars":  5,
+                                 "date":  "2026-04-20",
+                                 "text":  "記念日にペアリングを作りました！トントン叩いて磨く作業がすごく楽しくて、お揃いの指輪が作れて最高の思い出になりました。"
+                             },
+                             {
+                                 "author":  "ショウ",
+                                 "stars":  5,
+                                 "date":  "2026-03-15",
+                                 "text":  "職人さんの教え方が丁寧で面白く、不器用な自分でも綺麗に仕上がりました。刻印もその場で入れてもらえます！"
+                             }
+                         ]
+    },
+    {
+        "id":  5,
+        "name":  "glanta（グレンタ）鎌倉店",
+        "area":  "鎌倉",
+        "address":  "鎌倉市扇ガ谷1-8-4",
+        "category":  "ものづくり",
+        "emoji":  "💍",
+        "image":  "https://image.asoview-media.com/image/production/acp/3000018455/c0c22be0-6043-40bf-a10d-ab0a61b14869.JPG",
+        "price":  5500,
+        "priceLabel":  "¥5,500〜",
+        "unit":  "1名",
+        "rating":  4.7,
+        "reviews":  245,
+        "desc":  "お洒落で温かみのあるアトリエで、自分好みの太さやデザインのオリジナルリングを制作。当日その場で職人が仕上げてくれます。",
+        "tags":  [
+                     "カップル",
+                     "レトロアトリエ",
+                     "当日持ち帰り",
+                     "お洒落"
+                 ],
+        "badges":  [
+                       "couple",
+                       "new"
+                   ],
+        "popular":  8,
+        "isNew":  true,
+        "bookUrl":  "https://www.asoview.com/base/157295/",
+        "hours":  "10:00〜18:30",
+        "duration":  "約60分",
+        "reviews_data":  [
+                             {
+                                 "author":  "さくら",
+                                 "stars":  5,
+                                 "date":  "2026-05-02",
+                                 "text":  "店内の雰囲気がすごくお洒落で入るだけでテンションが上がります。友達同士で可愛いピンキーリングを作りました！"
+                             },
+                             {
+                                 "author":  "りく",
+                                 "stars":  4,
+                                 "date":  "2026-04-10",
+                                 "text":  "シンプルなデザインから槌目（つちめ）模様まで選べて楽しい。鎌倉観光の途中でサクッと作れるのが良いですね。"
+                             }
+                         ]
+    },
+    {
+        "id":  6,
+        "name":  "やまに大塚 陶芸教室",
+        "area":  "秩父",
+        "address":  "栃木県芳賀郡益子町城内坂88",
+        "category":  "ものづくり",
+        "emoji":  "🏺",
+        "image":  "https://image.asoview-media.com/image/production/acp/3000001484/17.jpg",
+        "price":  2800,
+        "priceLabel":  "¥2,800〜",
+        "unit":  "1名",
+        "rating":  4.8,
+        "reviews":  412,
+        "desc":  "益子焼の伝統ある老舗窯元が運営する陶芸教室。初めての方でも電動ろくろを使って本格的な器づくりが体験できます。後日郵送。",
+        "tags":  [
+                     "家族",
+                     "初心者歓迎",
+                     "子供体験可",
+                     "窯元直営",
+                     "作品郵送"
+                 ],
+        "badges":  [
+                       "family",
+                       "popular"
+                   ],
+        "popular":  9,
+        "isNew":  false,
+        "bookUrl":  "https://www.asoview.com/base/831/",
+        "hours":  "9:30〜16:00",
+        "duration":  "約1時間30分",
+        "reviews_data":  [
+                             {
+                                 "author":  "まさとし",
+                                 "stars":  5,
+                                 "date":  "2026-04-05",
+                                 "text":  "子供（8歳）と一緒に電動ろくろに挑戦！先生が手元をしっかり支えてくれるので、形が崩れることなく綺麗なお茶碗が完成しました。"
+                             },
+                             {
+                                 "author":  "はるな",
+                                 "stars":  4,
+                                 "date":  "2026-03-18",
+                                 "text":  "土を触るのがとても気持ちよく、癒されました。焼き上がって届いたお皿を使うたびに益子旅行を思い出します！"
+                             }
+                         ]
+    },
+    {
+        "id":  7,
+        "name":  "長谷川陶苑",
+        "area":  "秩父",
+        "address":  "栃木県芳賀郡益子町益子4294",
+        "category":  "ものづくり",
+        "emoji":  "🏺",
+        "image":  "https://image.asoview-media.com/image/production/acp/3000006278/36008305-d89a-4e78-bf3d-f86d7261b725.JPG",
+        "price":  2500,
+        "priceLabel":  "¥2,500〜",
+        "unit":  "1名",
+        "rating":  4.6,
+        "reviews":  318,
+        "desc":  "創業100年以上の歴史。手びねり、電動ろくろ、絵付けなど、好みに合わせたプランが選択可能。広々とした自然豊かな工房です。",
+        "tags":  [
+                     "家族",
+                     "手びねりあり",
+                     "絵付けあり",
+                     "歴史ある工房",
+                     "駐車場完備"
+                 ],
+        "badges":  [
+                       "family"
+                   ],
+        "popular":  8,
+        "isNew":  false,
+        "bookUrl":  "https://www.asoview.com/base/136545/",
+        "hours":  "9:00〜17:00",
+        "duration":  "約2時間",
+        "reviews_data":  [
+                             {
+                                 "author":  "かずこ",
+                                 "stars":  5,
+                                 "date":  "2026-02-20",
+                                 "text":  "手びねりでオリジナルのマグカップを作りました。型にとらわれず自由に作らせてくれるので、子供の独創的な作品ができて楽しかったです。"
+                             },
+                             {
+                                 "author":  "たろう",
+                                 "stars":  4,
+                                 "date":  "2026-01-15",
+                                 "text":  "アットホームで素晴らしい工房でした。体験料もリーズナブルで、また違うプランで訪れたいです。"
+                             }
+                         ]
+    },
+    {
+        "id":  8,
+        "name":  "益子陶芸倶楽部",
+        "area":  "秩父",
+        "address":  "栃木県芳賀郡益子町益子3265-1",
+        "category":  "ものづくり",
+        "emoji":  "🏺",
+        "image":  "https://image.asoview-media.com/image/production/acp/3000013951/472b777e-d44d-41e4-a416-adc86c01c8f9.jpg",
+        "price":  3000,
+        "priceLabel":  "¥3,000〜",
+        "unit":  "1名",
+        "rating":  4.7,
+        "reviews":  182,
+        "desc":  "里山の静かな古民家で本格的な陶芸体験。併設の宿泊施設もあり、ゆったりと田舎の空気を感じながら作陶に打ち込めます。",
+        "tags":  [
+                     "一人旅歓迎",
+                     "古民家アトリエ",
+                     "宿泊プランあり",
+                     "静かな環境"
+                 ],
+        "badges":  [
+
+                   ],
+        "popular":  7,
+        "isNew":  false,
+        "bookUrl":  "https://www.asoview.com/base/153905/",
+        "hours":  "9:00〜17:00",
+        "duration":  "約2時間",
+        "reviews_data":  [
+                             {
+                                 "author":  "コウジ",
+                                 "stars":  5,
+                                 "date":  "2026-04-12",
+                                 "text":  "のんびりとした雰囲気の中で、土に向き合う時間が最高でした。都会の喧騒を離れてリフレッシュしたい人には本当におすすめです。"
+                             },
+                             {
+                                 "author":  "ちえ",
+                                 "stars":  4,
+                                 "date":  "2026-03-01",
+                                 "text":  "古民家がとても素敵でした！スタッフさんの指導も優しく、納得のいくお皿が焼けました。"
+                             }
+                         ]
+    },
+    {
+        "id":  9,
+        "name":  "箱根強羅公園 クラフトハウス",
+        "area":  "箱根",
+        "address":  "神奈川県足柄下郡箱根町強羅1300",
+        "category":  "アート",
+        "emoji":  "🎨",
+        "image":  "https://image.asoview-media.com/image/production/base/162058/559b1c08-4143-47c7-87c9-74f90154a62e.jpeg",
+        "price":  3800,
+        "priceLabel":  "¥3,800〜",
+        "unit":  "1名",
+        "rating":  4.7,
+        "reviews":  512,
+        "desc":  "箱根強羅公園内のお洒落なスタジオ。吹きガラス、サンドブラスト、陶芸、とんぼ玉、ドライフラワーアレンジなど多種多様なクラフトが揃っています。",
+        "tags":  [
+                     "カップル",
+                     "家族",
+                     "多ジャンル",
+                     "強羅公園内",
+                     "お洒落"
+                 ],
+        "badges":  [
+                       "couple",
+                       "family",
+                       "popular"
+                   ],
+        "popular":  10,
+        "isNew":  false,
+        "bookUrl":  "https://www.asoview.com/base/162058/",
+        "hours":  "9:00〜17:00",
+        "duration":  "約1〜2時間（体験による）",
+        "reviews_data":  [
+                             {
+                                 "author":  "ゆり",
+                                 "stars":  5,
+                                 "date":  "2026-05-03",
+                                 "text":  "吹きガラス体験をしました！ガラスが赤く光る様子を間近で見られて興奮。スタッフさんがつきっきりで手伝ってくれるので安心です。"
+                             },
+                             {
+                                 "author":  "としき",
+                                 "stars":  4,
+                                 "date":  "2026-04-22",
+                                 "text":  "強羅公園観光とセットで楽しめるのが最高。サンドブラストでグラスを作りましたが、簡単でクオリティの高いものが作れました。"
+                             }
+                         ]
+    },
+    {
+        "id":  10,
+        "name":  "仙石窯",
+        "area":  "箱根",
+        "address":  "神奈川県足柄下郡箱根町仙石原1246-277",
+        "category":  "アート",
+        "emoji":  "🏺",
+        "image":  "https://image.asoview-media.com/image/production/acp/3000005906/efda948a-17a0-4f07-b0bc-78eeb1dc981f.jpg",
+        "price":  4000,
+        "priceLabel":  "¥4,000〜",
+        "unit":  "1名",
+        "rating":  4.6,
+        "reviews":  114,
+        "desc":  "仙石原の自然豊かな別荘地にある隠れ家的陶芸窯。静かな森の中で、自分好みの器作りに没頭できます。デートにもおすすめ。",
+        "tags":  [
+                     "カップル",
+                     "隠れ家アトリエ",
+                     "静かな自然",
+                     "マンツーマン指導"
+                 ],
+        "badges":  [
+                       "couple"
+                   ],
+        "popular":  8,
+        "isNew":  false,
+        "bookUrl":  "https://www.asoview.com/base/136298/",
+        "hours":  "10:00〜16:00",
+        "duration":  "約2時間",
+        "reviews_data":  [
+                             {
+                                 "author":  "ミサキ",
+                                 "stars":  5,
+                                 "date":  "2026-03-29",
+                                 "text":  "仙石原の静かな森の中で陶芸ができるのが贅沢！先生が面白い方で、コツを丁寧に教えてくれました。届いた器、毎日愛用しています。"
+                             },
+                             {
+                                 "author":  "たくや",
+                                 "stars":  4,
+                                 "date":  "2026-02-14",
+                                 "text":  "本格的なろくろ体験。静かな環境で集中して土をこねる時間が日常を忘れさせてくれました。"
+                             }
+                         ]
+    },
+    {
+        "id":  11,
+        "name":  "和思工房 和紙の庵",
+        "area":  "箱根",
+        "address":  "神奈川県足柄下郡箱根町湯本498",
+        "category":  "アート",
+        "emoji":  "🎨",
+        "image":  "https://image.asoview-media.com/image/production/acp/3000028286/2df678cb-29a6-430a-b7c2-ee3e5f37582a.jpg",
+        "price":  3500,
+        "priceLabel":  "¥3,500〜",
+        "unit":  "1名",
+        "rating":  4.5,
+        "reviews":  68,
+        "desc":  "箱根湯本駅から徒歩圏内。伝統的な越前和紙づくりの技法を用いて、オリジナルのはがきやランプシェードを制作できます。",
+        "tags":  [
+                     "家族",
+                     "駅チカ",
+                     "伝統工芸",
+                     "和紙ランプ",
+                     "持ち帰り可"
+                 ],
+        "badges":  [
+                       "family",
+                       "new"
+                   ],
+        "popular":  7,
+        "isNew":  true,
+        "bookUrl":  "https://www.asoview.com/base/164273/",
+        "hours":  "10:00〜16:00",
+        "duration":  "約90分",
+        "reviews_data":  [
+                             {
+                                 "author":  "はるえ",
+                                 "stars":  5,
+                                 "date":  "2026-04-15",
+                                 "text":  "和紙の中に押し花を散りばめたオリジナルはがきを作りました。温かみのある作品が仕上がってとても嬉しかったです。"
+                             },
+                             {
+                                 "author":  "ゆうと",
+                                 "stars":  4,
+                                 "date":  "2026-03-10",
+                                 "text":  "子供と一緒に参加しました。和紙の繊維をすくう作業が新鮮で、非常に教育的でした。"
+                             }
+                         ]
+    },
+    {
+        "id":  12,
+        "name":  "GLASS STUDIO PUNTY",
+        "area":  "日光",
+        "address":  "栃木県日光市所野1543-563",
+        "category":  "伝統文化",
+        "emoji":  "🏺",
+        "image":  "https://image.asoview-media.com/image/production/acp/3000001075/da1f9f86-a54a-4293-baee-b35805d5e44f.jpg",
+        "price":  3850,
+        "priceLabel":  "¥3,850〜",
+        "unit":  "1名",
+        "rating":  4.8,
+        "reviews":  210,
+        "desc":  "日光の霧降高原にあるガラススタジオ。吹きガラスやサンドブラスト、とんぼ玉制作などを体験できます。日光の思い出に美しいガラス作品を。",
+        "tags":  [
+                     "カップル",
+                     "家族",
+                     "吹きガラスあり",
+                     "観光地近く",
+                     "お洒落"
+                 ],
+        "badges":  [
+                       "couple",
+                       "family",
+                       "popular"
+                   ],
+        "popular":  9,
+        "isNew":  false,
+        "bookUrl":  "https://www.asoview.com/base/590/",
+        "hours":  "9:30〜17:00",
+        "duration":  "約1〜2時間（プランによる）",
+        "reviews_data":  [
+                             {
+                                 "author":  "なおこ",
+                                 "stars":  5,
+                                 "date":  "2026-04-30",
+                                 "text":  "吹きガラスでグラスを作成しました。ガラスの色や形を自分でカスタマイズできて、世界に一つだけのグラスができて感動！日光観光でおすすめです。"
+                             },
+                             {
+                                 "author":  "こうへい",
+                                 "stars":  5,
+                                 "date":  "2026-03-11",
+                                 "text":  "スタッフの皆さんがとてもフレンドリーで親切。楽しく作業ができました。吹きガラスはスリルもあって楽しかったです！"
+                             }
+                         ]
+    },
+    {
+        "id":  13,
+        "name":  "そば処 満留賀（まるか）",
+        "area":  "川越",
+        "address":  "埼玉県朝霞市膝折町2-13-16",
+        "category":  "料理・食",
+        "emoji":  "🍜",
+        "image":  "https://image.asoview-media.com/image/production/acp/3000008264/d5a80c83-0b4f-4b50-ba17-4985208d86c2.jpg",
+        "price":  2500,
+        "priceLabel":  "¥2,500〜",
+        "unit":  "1名",
+        "rating":  4.9,
+        "reviews":  320,
+        "desc":  "プロのそば職人が教える本格的なそば打ち体験教室。打ちたて・茹でたての香り高いお蕎麦をその場で試食できます。英語対応可。",
+        "tags":  [
+                     "家族",
+                     "子供可",
+                     "食事付き",
+                     "職人が指導",
+                     "初心者OK"
+                 ],
+        "badges":  [
+                       "family",
+                       "popular"
+                   ],
+        "popular":  9,
+        "isNew":  false,
+        "bookUrl":  "https://www.asoview.com/base/151143/",
+        "hours":  "10:30〜 / 16:30〜（予約制）",
+        "duration":  "約2時間（試食込み）",
+        "reviews_data":  [
+                             {
+                                 "author":  "しんじ",
+                                 "stars":  5,
+                                 "date":  "2026-05-04",
+                                 "text":  "本格的なそば粉をこねて、伸ばして、細く切る作業がすごく楽しくて、自分で打った蕎麦は喉越しが良くて格別に美味しかったです！"
+                             },
+                             {
+                                 "author":  "まゆみ",
+                                 "stars":  5,
+                                 "date":  "2026-04-18",
+                                 "text":  "子供連れで参加しました。職人さんが子供に優しく教えてくれたので、家族で美味しいお蕎麦が作れて大満足です。"
+                             }
+                         ]
+    },
+    {
+        "id":  14,
+        "name":  "キヨコフラワーデザインスクール\u0026メリアクッキングサロン",
+        "area":  "横浜",
+        "address":  "神奈川県横浜市中区",
+        "category":  "料理・食",
+        "emoji":  "🍽️",
+        "image":  "https://image.asoview-media.com/image/production/acp/3000006723/35353018-11c0-43b0-bef5-1193794fd3af.jpg",
+        "price":  6000,
+        "priceLabel":  "¥6,000〜",
+        "unit":  "1名",
+        "rating":  4.6,
+        "reviews":  89,
+        "desc":  "横浜の洗練されたサロンで、お洒落な創作和菓子や季節のパン作りを体験。少人数制で丁寧に教えます。デートにもおすすめ。",
+        "tags":  [
+                     "カップル",
+                     "お洒落サロン",
+                     "和菓子づくり",
+                     "少人数制",
+                     "食事付き"
+                 ],
+        "badges":  [
+                       "couple"
+                   ],
+        "popular":  8,
+        "isNew":  false,
+        "bookUrl":  "https://www.asoview.com/base/149602/",
+        "hours":  "10:30〜15:30",
+        "duration":  "約2時間30分（試食込み）",
+        "reviews_data":  [
+                             {
+                                 "author":  "リカ",
+                                 "stars":  5,
+                                 "date":  "2026-04-15",
+                                 "text":  "練り切りという伝統和菓子を作りました！デザインがすごく可愛くて、食べるのがもったいなかったです。お茶と一緒に美味しくいただきました。"
+                             },
+                             {
+                                 "author":  "ともひろ",
+                                 "stars":  4,
+                                 "date":  "2026-03-22",
+                                 "text":  "妻と一緒にパン作り体験。サロンの雰囲気が良く、落ち着いて美味しいパンが焼き上がりました。"
+                             }
+                         ]
+    },
+    {
+        "id":  15,
+        "name":  "小松沢レジャー農園",
+        "area":  "秩父",
+        "address":  "埼玉県秩父郡横瀬町大字横瀬1408",
+        "category":  "農業体験",
+        "emoji":  "🌱",
+        "image":  "https://image.asoview-media.com/image/production/acp/3000022090/367f1ebc-c1ac-41e8-b033-56beff322c64.JPG",
+        "price":  2800,
+        "priceLabel":  "¥2,800〜",
+        "unit":  "1名",
+        "rating":  4.8,
+        "reviews":  750,
+        "desc":  "秩父最大級の体験農園！いちご・ぶどう・しいたけ狩り、川魚のつかみ取り、手打ちうどん体験、BBQなど、1日中里山で遊べる大人気スポット。",
+        "tags":  [
+                     "家族",
+                     "子供に大人気",
+                     "味覚狩り",
+                     "BBQ併設",
+                     "駐車場無料"
+                 ],
+        "badges":  [
+                       "family",
+                       "popular"
+                   ],
+        "popular":  10,
+        "isNew":  false,
+        "bookUrl":  "https://www.asoview.com/base/159918/",
+        "hours":  "10:00〜16:00",
+        "duration":  "約2〜4時間（プランによる）",
+        "reviews_data":  [
+                             {
+                                 "author":  "だいすけ",
+                                 "stars":  5,
+                                 "date":  "2026-05-02",
+                                 "text":  "子供連れでしいたけ狩りと川魚つかみ取りを体験！採ったしいたけと魚をその場で焼いて食べられるのが本当に最高の贅沢でした。"
+                             },
+                             {
+                                 "author":  "かな",
+                                 "stars":  5,
+                                 "date":  "2026-04-25",
+                                 "text":  "いちご狩りプランで参加。すごく甘くて大きないちごが食べ放題で幸せでした。園内が綺麗で大満足です！"
+                             }
+                         ]
+    },
+    {
+        "id":  16,
+        "name":  "アムスハウス＆フレンズ",
+        "area":  "秩父",
+        "address":  "埼玉県秩父郡長瀞町本野上367-1",
+        "category":  "農業体験",
+        "emoji":  "🚣",
+        "image":  "https://image.asoview-media.com/image/production/acp/2000000036/5b459056-5ff3-44fb-8b0a-81900c9bcea0.jpg",
+        "price":  6000,
+        "priceLabel":  "¥6,000〜",
+        "unit":  "1名",
+        "rating":  4.9,
+        "reviews":  540,
+        "desc":  "長瀞の荒川で大迫力のラフティング体験！資格を持つプロガイドが同乗し、安全第一でスリリングな川下りを提供。写真データ無料進呈。",
+        "tags":  [
+                     "カップル",
+                     "グループ歓迎",
+                     "水濡れ必須",
+                     "プロガイド同乗",
+                     "写真無料"
+                 ],
+        "badges":  [
+                       "couple",
+                       "popular"
+                   ],
+        "popular":  9,
+        "isNew":  false,
+        "bookUrl":  "https://www.asoview.com/base/58/",
+        "hours":  "8:30〜17:00",
+        "duration":  "約3時間",
+        "reviews_data":  [
+                             {
+                                 "author":  "ショウタ",
+                                 "stars":  5,
+                                 "date":  "2026-05-05",
+                                 "text":  "長瀞ラフティング最高でした！激流を下るスリルと、途中の緩やかな場所で川に飛び込んで遊ぶのが本当に楽しくて、ガイドさんの盛り上げも抜群でした！"
+                             },
+                             {
+                                 "author":  "ゆみこ",
+                                 "stars":  5,
+                                 "date":  "2026-04-29",
+                                 "text":  "ツアー中の写真を無料でたくさんもらえるのが嬉しかったです。スタッフみんな明るく親切で、夏に絶対また来ます！"
+                             }
+                         ]
+    },
+    {
+        "id":  17,
+        "name":  "アウトドアセンター長瀞",
+        "area":  "秩父",
+        "address":  "埼玉県秩父郡長瀞町長瀞1429",
+        "category":  "農業体験",
+        "emoji":  "🚣",
+        "image":  "https://image.asoview-media.com/image/production/acp/3000000748/f5343b05-da3a-4579-b835-d4d5a42f3b31.png",
+        "price":  6000,
+        "priceLabel":  "¥6,000〜",
+        "unit":  "1名",
+        "rating":  4.7,
+        "reviews":  380,
+        "desc":  "長瀞駅から徒歩圏内の好立地。荒川の急流を下る大人気ラフティング！小学1年生から参加可能なファミリープランもありご家族連れに大人気。",
+        "tags":  [
+                     "家族",
+                     "子供可",
+                     "駅チカ",
+                     "手ぶらOK",
+                     "温水シャワーあり"
+                 ],
+        "badges":  [
+                       "family"
+                   ],
+        "popular":  8,
+        "isNew":  false,
+        "bookUrl":  "https://www.asoview.com/base/416/",
+        "hours":  "9:00〜17:00",
+        "duration":  "約2時間30分",
+        "reviews_data":  [
+                             {
+                                 "author":  "ひろし",
+                                 "stars":  5,
+                                 "date":  "2026-04-30",
+                                 "text":  "子供2人（小3、小5）を連れて参加。怖がるかと思いましたが、ガイドさんのトークが面白くて大はしゃぎ！家族全員ビショビショになりながら大満足でした。"
+                             },
+                             {
+                                 "author":  "マサミ",
+                                 "stars":  4,
+                                 "date":  "2026-03-21",
+                                 "text":  "長瀞駅のすぐ近くで受付できるので便利。更衣室や温水シャワーもしっかり完備されていて、快適に遊べました。"
+                             }
+                         ]
+    },
+    {
+        "id":  18,
+        "name":  "忍者カフェ浅草",
+        "area":  "浅草",
+        "address":  "台東区西浅草3-27-14",
+        "category":  "伝統文化",
+        "emoji":  "🥷",
+        "image":  "https://image.asoview-media.com/image/production/acp/3000015132/4b646bf7-a236-4e87-9661-bcf47009de8e.jpg",
+        "price":  3800,
+        "priceLabel":  "¥3,800〜",
+        "unit":  "1名",
+        "rating":  4.8,
+        "reviews":  310,
+        "desc":  "忍者衣装に身を包み、手裏剣投げ・吹き矢・抜刀術といった本格的な修行を体験できるエンタメカフェ！子供から大人、外国人観光客まで大人気。",
+        "tags":  [
+                     "家族",
+                     "子供可",
+                     "エンタメ",
+                     "衣装レンタル込",
+                     "屋内施設"
+                 ],
+        "badges":  [
+                       "family",
+                       "popular"
+                   ],
+        "popular":  10,
+        "isNew":  false,
+        "bookUrl":  "https://www.asoview.com/base/154743/",
+        "hours":  "10:00〜18:00",
+        "duration":  "約1時間30分",
+        "reviews_data":  [
+                             {
+                                 "author":  "さやか",
+                                 "stars":  5,
+                                 "date":  "2026-04-28",
+                                 "text":  "息子が忍者に変身して手裏剣修行！抜刀のポーズを真剣に教わっている姿がとても格好良く、家族の良い記念になりました。"
+                             },
+                             {
+                                 "author":  "John",
+                                 "stars":  5,
+                                 "date":  "2026-04-12",
+                                 "text":  "Amazing experience in Asakusa! Throwing shuriken (ninja stars) was so much fun. The staff were energetic and made it a memorable ninja training."
+                             }
+                         ]
+    },
+    {
+        "id":  19,
+        "name":  "SAMURAI Project",
+        "area":  "鎌倉",
+        "address":  "鎌倉市山ノ内501（円覚寺塔頭）",
+        "category":  "癒し・禅",
+        "emoji":  "🧘",
+        "image":  "https://image.asoview-media.com/image/production/acp/3000007483/3d95cc12-fd46-490b-9c35-6dce869bf9cb.jpg",
+        "price":  2500,
+        "priceLabel":  "¥2,500〜",
+        "unit":  "1名",
+        "rating":  4.9,
+        "reviews":  120,
+        "desc":  "北鎌倉の名刹・円覚寺のお寺の静寂な空間で、本格的な坐禅体験と写経や禅アートを体験。日々の雑念を払い、静かに心を調える特別な時間を。",
+        "tags":  [
+                     "一人OK",
+                     "静寂体験",
+                     "お寺で開催",
+                     "伝統文化",
+                     "リフレッシュ"
+                 ],
+        "badges":  [
+                       "popular"
+                   ],
+        "popular":  9,
+        "isNew":  false,
+        "bookUrl":  "https://www.asoview.com/base/150308/",
+        "hours":  "13:30〜 / 15:30〜",
+        "duration":  "約90分",
+        "reviews_data":  [
+                             {
+                                 "author":  "ちひろ",
+                                 "stars":  5,
+                                 "date":  "2026-05-02",
+                                 "text":  "お寺の清らかな空気の中で呼吸を整える坐禅は、日々のストレスがすーっと消えていくようでした。住職さんのお話も大変ためになりました。"
+                             },
+                             {
+                                 "author":  "ゆうすけ",
+                                 "stars":  5,
+                                 "date":  "2026-04-10",
+                                 "text":  "静寂の中での精神統一。心が穏やかになる素晴らしい体験でした。鎌倉に来たら一度は体験すべきです。"
+                             }
+                         ]
+    },
+    {
+        "id":  20,
+        "name":  "横浜SUP倶楽部",
+        "area":  "横浜",
+        "address":  "横浜市中区日ノ出町2-166",
+        "category":  "アウトドア",
+        "emoji":  "🏄",
+        "image":  "https://image.asoview-media.com/image/production/acp/3000009154/cbe16a45-d902-4c6a-8ee5-060e77dca15d.JPG",
+        "price":  5000,
+        "priceLabel":  "¥5,000〜",
+        "unit":  "1名",
+        "rating":  4.8,
+        "reviews":  198,
+        "desc":  "横浜の大岡川からみなとみらいへ漕ぎ出すシティSUP体験ツアー！街と海を水上から見上げる非日常の絶景が楽しめます。初心者大歓迎。",
+        "tags":  [
+                     "カップル",
+                     "シティ絶景",
+                     "SUPA公認スクール",
+                     "水上散歩",
+                     "初心者歓迎"
+                 ],
+        "badges":  [
+                       "couple",
+                       "popular"
+                   ],
+        "popular":  9,
+        "isNew":  false,
+        "bookUrl":  "https://www.asoview.com/base/151847/",
+        "hours":  "9:00〜17:00",
+        "duration":  "約2時間",
+        "reviews_data":  [
+                             {
+                                 "author":  "しんや",
+                                 "stars":  5,
+                                 "date":  "2026-05-03",
+                                 "text":  "みなとみらいのビル群を水上から眺める体験は格別！ガイドさんが落ちないように優しく教えてくれたので、一度も落水せずに楽しめました。"
+                             },
+                             {
+                                 "author":  "めぐみ",
+                                 "stars":  4,
+                                 "date":  "2026-04-20",
+                                 "text":  "川から海へ出ていくルートが新鮮でした。お天気も良く水上散歩は最高の運動になります。写真もたくさん撮ってもらえました！"
+                             }
+                         ]
+    },
+    {
+        "id":  21,
+        "name":  "水辺荘",
+        "area":  "横浜",
+        "address":  "横浜市中区黄金町1-2丙",
+        "category":  "アウトドア",
+        "emoji":  "🏄",
+        "image":  "https://image.asoview-media.com/image/production/acp/3000003232/26f0c3c3-a141-4a05-816c-934268c42820.JPG",
+        "price":  4500,
+        "priceLabel":  "¥4,500〜",
+        "unit":  "1名",
+        "rating":  4.7,
+        "reviews":  134,
+        "desc":  "横浜の大岡川沿いのレトロな高架下の水辺を拠点とするSUP・カヤックスクール。アットホームで初心者も安心してパドル操作が学べます。",
+        "tags":  [
+                     "一人歓迎",
+                     "リバーSUP",
+                     "アットホーム",
+                     "初心者歓迎",
+                     "駅チカ"
+                 ],
+        "badges":  [
+
+                   ],
+        "popular":  7,
+        "isNew":  false,
+        "bookUrl":  "https://www.asoview.com/base/1967/",
+        "hours":  "10:00〜16:00",
+        "duration":  "約90分",
+        "reviews_data":  [
+                             {
+                                 "author":  "あやか",
+                                 "stars":  5,
+                                 "date":  "2026-03-15",
+                                 "text":  "初めてのSUPでしたが、ボードが大きくて安定していてすぐに立てました。黄金町の桜並木を川から見上げられて感動です！"
+                             },
+                             {
+                                 "author":  "けんご",
+                                 "stars":  4,
+                                 "date":  "2026-02-28",
+                                 "text":  "フレンドリーなインストラクターさんのおかげで楽しく過ごせました。また暖かい季節に予約したいです。"
+                             }
+                         ]
+    },
+    {
+        "id":  22,
+        "name":  "川越体験工房青い鳥",
+        "area":  "川越",
+        "address":  "埼玉県川越市幸町5-4",
+        "category":  "アート",
+        "emoji":  "🎨",
+        "image":  "https://image.asoview-media.com/image/production/acp/3000001084/1.jpg",
+        "price":  3000,
+        "priceLabel":  "¥3,000〜",
+        "unit":  "1名",
+        "rating":  4.7,
+        "reviews":  280,
+        "desc":  "川越の「蔵造りの街並み」にあるガラス体験工房。吹きガラス、サンドブラスト、とんぼ玉、彫りガラスなどの体験が充実。おみやげに最適。",
+        "tags":  [
+                     "家族",
+                     "カップル",
+                     "蔵の街並み",
+                     "当日持ち帰り可",
+                     "ガラス工芸"
+                 ],
+        "badges":  [
+                       "family",
+                       "couple",
+                       "popular"
+                   ],
+        "popular":  9,
+        "isNew":  false,
+        "bookUrl":  "https://www.asoview.com/base/599/",
+        "hours":  "10:00〜18:00",
+        "duration":  "約1〜2時間",
+        "reviews_data":  [
+                             {
+                                 "author":  "ゆき",
+                                 "stars":  5,
+                                 "date":  "2026-04-29",
+                                 "text":  "とんぼ玉のストラップを作りました！ガラスが熱でとろける様子がおもしろく、綺麗なガラス玉が仕上がりました。川越散策でおすすめです。"
+                             },
+                             {
+                                 "author":  "りゅうじ",
+                                 "stars":  4,
+                                 "date":  "2026-03-12",
+                                 "text":  "サンドブラストでマグカップに絵付けしました。カッターで模様を切り抜く作業が集中できて楽しく、良いお土産になりました。"
+                             }
+                         ]
+    },
+    {
+        "id":  23,
+        "name":  "glanta（グレンタ）川越店",
+        "area":  "川越",
+        "address":  "埼玉県川越市新富町1-11",
+        "category":  "アート",
+        "emoji":  "💍",
+        "image":  "https://image.asoview-media.com/image/production/acp/3000018456/91e1eb24-a1b3-4bc8-9ffc-4f014f05d5b3.jpeg",
+        "price":  4000,
+        "priceLabel":  "¥4,000〜",
+        "unit":  "1名",
+        "rating":  4.8,
+        "reviews":  110,
+        "desc":  "小江戸川越の散策に合わせたオリジナルリング（指輪）手作り体験！その場ですぐに制作できて持ち換えます。デートや女子旅に最適。",
+        "tags":  [
+                     "カップル",
+                     "女子旅",
+                     "当日持ち帰り",
+                     "お洒落",
+                     "小江戸川越"
+                 ],
+        "badges":  [
+                       "couple",
+                       "new"
+                   ],
+        "popular":  8,
+        "isNew":  true,
+        "bookUrl":  "https://www.asoview.com/base/157294/",
+        "hours":  "10:00〜19:00",
+        "duration":  "約45分",
+        "reviews_data":  [
+                             {
+                                 "author":  "みゆう",
+                                 "stars":  5,
+                                 "date":  "2026-05-01",
+                                 "text":  "小江戸のレトロな街並みを歩いた後に友達と立ち寄りました。好みの太さで可愛いシルバーリングがその場で作れてとても気に入ってます！"
+                             },
+                             {
+                                 "author":  "しょうへい",
+                                 "stars":  5,
+                                 "date":  "2026-04-18",
+                                 "text":  "彼女へのサプライズでペアリング作り。短時間でお洒落な指輪が完成するので、デートコースのアクセントにぴったりです。"
+                             }
+                         ]
+    }
 ]
