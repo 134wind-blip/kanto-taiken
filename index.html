@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>かんとうたいけん｜関東の体験・アクティビティ予約サイト</title>
+<meta name="description" content="関東圏の体験・アクティビティ検索サイト。着物・浴衣・ものづくり・料理・アート・アウトドア・伝統文化・農業体験を浅草・鎌倉・日光・箱根・川越・横浜・秩父エリアから探せます。カップル・子連れファミリーにおすすめ。">
+<meta property="og:title" content="かんとうたいけん｜関東の体験・アクティビティ予約">
+<meta property="og:description" content="関東圏の体験・アクティビティ検索サイト。カップル・子連れファミリーにおすすめの体験が見つかります。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://kanto-taiken.jp/ogp.jpg">
+<!-- Google AdSense: 以下のコードをAdSense審査通過後に設置してください -->
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===== CSS変数（テーマ） ===== */
+:root {
+  --gold: #c8a96e;
+  --gold-light: #e8d4a8;
+  --gold-dark: #9a7a48;
+  --gold-faint: rgba(200,169,110,0.08);
+  --bg: #0d0b08;
+  --surface: #181310;
+  --surface2: #211a12;
+  --surface3: #2a221a;
+  --border: #362c1e;
+  --border2: #4a3c28;
+  --text: #ece0cc;
+  --text2: #b8a898;
+  --muted: #7a6a58;
+  --red: #d45040;
+  --teal: #2a8a7a;
+  --green: #3a9460;
+  --gap: 14px;
+  --radius: 14px;
+  --radius-sm: 8px;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;overscroll-behavior:none}
+body{
+  font-family:'Noto Sans JP',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  min-height:100vh;
+  font-size:14px;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ===== 和柄背景 ===== */
+body::before{
+  content:'';
+  position:fixed;top:0;left:0;right:0;bottom:0;
+  background-image:
+    radial-gradient(ellipse at 15% 15%,rgba(200,169,110,0.04) 0%,transparent 55%),
+    radial-gradient(ellipse at 85% 85%,rgba(200,169,110,0.04) 0%,transparent 55%),
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30 Z' fill='none' stroke='%23c8a96e' stroke-width='0.3' opacity='0.15'/%3E%3Ccircle cx='30' cy='30' r='10' fill='none' stroke='%23c8a96e' stroke-width='0.3' opacity='0.1'/%3E%3C/svg%3E");
+  pointer-events:none;z-index:0;
+}
+
+/* ===== レイアウト ===== */
+.wrapper{
+  max-width:480px;
+  margin:0 auto;
+  position:relative;
+  z-index:1;
+  min-height:100vh;
+}
+
+/* ===== ヘッダー ===== */
+header{
+  position:sticky;top:0;z-index:200;
+  background:rgba(13,11,8,0.96);
+  border-bottom:1px solid var(--border);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+}
+.hd-inner{padding:14px 16px 10px}
+.hd-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px}
+.logo{
+  font-family:'Noto Serif JP',serif;
+  font-size:22px;font-weight:700;
+  color:var(--gold);
+  letter-spacing:4px;
+}
+.logo-sub{font-size:9px;color:var(--muted);letter-spacing:5px;display:block;margin-top:3px}
+.hd-right{display:flex;align-items:center;gap:8px}
+.auth-btn{
+  background:transparent;
+  border:1px solid var(--border2);
+  color:var(--text2);
+  border-radius:20px;
+  padding:5px 12px;
+  font-size:11px;
+  font-family:'Noto Sans JP',sans-serif;
+  cursor:pointer;
+  transition:all .2s;
+  letter-spacing:.5px;
+}
+.auth-btn:hover,.auth-btn.logged{border-color:var(--gold-dark);color:var(--gold)}
+.auth-btn.logged{background:rgba(200,169,110,0.12)}
+
+/* ===== 検索バー ===== */
+.search-wrap{
+  background:var(--surface2);
+  border:1px solid var(--border);
+  border-radius:var(--radius-sm);
+  padding:10px 14px;
+  display:flex;align-items:center;gap:8px;
+  color:var(--muted);font-size:13px;
+  margin-bottom:10px;
+  transition:border-color .2s;
+  cursor:text;
+}
+.search-wrap:focus-within{border-color:var(--gold-dark)}
+.search-wrap input{
+  background:none;border:none;outline:none;
+  color:var(--text);font-size:13px;font-family:'Noto Sans JP',sans-serif;
+  width:100%;
+}
+.search-wrap input::placeholder{color:var(--muted)}
+.s-icon{color:var(--gold);font-size:15px}
+.clear-btn{background:none;border:none;color:var(--muted);cursor:pointer;padding:0 2px;font-size:16px;line-height:1}
+.clear-btn:hover{color:var(--text2)}
+
+/* ===== エリアタグ ===== */
+.area-scroll{display:flex;gap:6px;overflow-x:auto;padding-bottom:2px;scrollbar-width:none}
+.area-scroll::-webkit-scrollbar{display:none}
+.area-tag{
+  background:var(--surface2);border:1px solid var(--border);
+  border-radius:20px;padding:5px 13px;
+  font-size:11px;color:var(--muted);
+  white-space:nowrap;flex-shrink:0;cursor:pointer;
+  transition:all .2s;user-select:none;
+}
+.area-tag:hover,.area-tag.active{
+  background:rgba(200,169,110,0.14);
+  border-color:var(--gold-dark);color:var(--gold);
+}
+
+/* ===== メイン ===== */
+main{padding:18px 14px 100px}
+
+/* ===== フィルターバー ===== */
+.filter-bar{display:flex;gap:8px;margin-bottom:20px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+.filter-bar::-webkit-scrollbar{display:none}
+.filter-chip{
+  background:var(--surface2);border:1px solid var(--border);
+  border-radius:20px;padding:5px 12px;
+  font-size:11px;color:var(--muted);
+  white-space:nowrap;flex-shrink:0;cursor:pointer;
+  transition:all .2s;user-select:none;
+}
+.filter-chip:hover,.filter-chip.active{
+  background:rgba(200,169,110,0.14);border-color:var(--gold-dark);color:var(--gold);
+}
+
+/* ===== セクションラベル ===== */
+.sec-label{
+  font-size:10px;color:var(--muted);letter-spacing:3px;
+  margin-bottom:12px;
+  display:flex;align-items:center;gap:10px;
+}
+.sec-label::after{content:'';flex:1;height:1px;background:var(--border)}
+.sec-label em{font-style:normal;color:var(--gold);margin-left:4px}
+
+/* ===== カテゴリグリッド ===== */
+.cat-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:8px;margin-bottom:24px;
+}
+.cat-item{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius-sm);padding:10px 6px;
+  text-align:center;cursor:pointer;transition:all .2s;
+}
+.cat-item:hover,.cat-item.active{
+  background:rgba(200,169,110,0.1);border-color:var(--gold-dark);
+  transform:translateY(-2px);
+}
+.cat-em{font-size:20px;display:block;margin-bottom:4px}
+.cat-name{font-size:9px;color:var(--muted);line-height:1.2}
+.cat-item.active .cat-name{color:var(--gold)}
+
+/* ===== 並び順・件数バー ===== */
+.result-bar{
+  display:flex;justify-content:space-between;align-items:center;
+  margin-bottom:14px;
+}
+.result-count{font-size:11px;color:var(--muted)}
+.result-count strong{color:var(--gold)}
+.sort-wrap{position:relative}
+.sort-select{
+  background:var(--surface2);border:1px solid var(--border);
+  color:var(--text2);border-radius:var(--radius-sm);
+  padding:5px 28px 5px 10px;font-size:11px;
+  font-family:'Noto Sans JP',sans-serif;
+  appearance:none;-webkit-appearance:none;cursor:pointer;
+  transition:border-color .2s;outline:none;
+}
+.sort-select:hover,.sort-select:focus{border-color:var(--gold-dark)}
+.sort-arrow{
+  position:absolute;right:8px;top:50%;transform:translateY(-50%);
+  color:var(--muted);font-size:10px;pointer-events:none;
+}
+
+/* ===== 広告スロット ===== */
+.ad-slot{
+  background:var(--surface2);border:1px dashed var(--border2);
+  border-radius:var(--radius-sm);padding:14px;
+  text-align:center;font-size:10px;color:var(--muted);
+  margin-bottom:20px;letter-spacing:1px;
+  min-height:60px;display:flex;align-items:center;justify-content:center;
+}
+/* AdSense実装時:
+.ad-slot .adsbygoogle { display:block; }
+*/
+
+/* ===== スポットカード ===== */
+.spot-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius);overflow:hidden;
+  margin-bottom:var(--gap);transition:all .25s;cursor:pointer;
+  position:relative;
+}
+.spot-card:hover{
+  border-color:var(--gold-dark);
+  transform:translateY(-2px);
+  box-shadow:0 10px 40px rgba(0,0,0,.4);
+}
+.spot-card.hidden{display:none}
+
+.spot-img{
+  height:130px;
+  background:linear-gradient(135deg,var(--surface2),var(--surface3));
+  display:flex;align-items:center;justify-content:center;
+  font-size:48px;position:relative;overflow:hidden;
+}
+.spot-img::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;
+  height:50px;
+  background:linear-gradient(transparent,var(--surface));
+}
+
+.spot-badges{
+  position:absolute;top:10px;left:10px;
+  display:flex;gap:5px;z-index:1;flex-wrap:wrap;
+}
+.badge{
+  padding:3px 9px;border-radius:20px;
+  font-size:9px;font-weight:700;
+  backdrop-filter:blur(8px);
+}
+.b-couple{background:rgba(200,60,100,0.82);color:#fff}
+.b-family{background:rgba(42,138,122,0.82);color:#fff}
+.b-popular{background:rgba(200,169,110,0.88);color:#1a1510}
+.b-new{background:rgba(80,160,80,0.82);color:#fff}
+
+.fav-btn{
+  position:absolute;top:10px;right:10px;
+  background:rgba(13,11,8,0.7);border:1px solid var(--border);
+  color:var(--muted);border-radius:50%;
+  width:32px;height:32px;display:flex;align-items:center;justify-content:center;
+  font-size:16px;cursor:pointer;z-index:2;transition:all .2s;
+  backdrop-filter:blur(6px);
+}
+.fav-btn:hover{border-color:var(--red);color:var(--red)}
+.fav-btn.active{color:var(--red);border-color:var(--red);background:rgba(212,80,64,0.2)}
+
+.spot-body{padding:12px 14px 14px}
+.spot-name{
+  font-family:'Noto Serif JP',serif;
+  font-size:15px;font-weight:700;color:var(--text);
+  margin-bottom:5px;letter-spacing:.5px;line-height:1.4;
+}
+.spot-meta{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.spot-area{font-size:11px;color:var(--muted)}
+.spot-rating{font-size:11px;color:var(--gold)}
+.spot-desc{font-size:12px;color:var(--muted);line-height:1.7;margin-bottom:12px}
+.spot-footer{
+  display:flex;justify-content:space-between;align-items:center;
+  padding-top:10px;border-top:1px solid var(--border);
+}
+.spot-price{font-size:15px;font-weight:700;color:var(--gold)}
+.spot-price span{font-size:10px;color:var(--muted);font-weight:400}
+.book-btn{
+  background:linear-gradient(135deg,var(--gold) 0%,var(--gold-dark) 100%);
+  color:var(--bg);border:none;
+  padding:8px 16px;border-radius:20px;
+  font-size:11px;font-weight:700;
+  font-family:'Noto Sans JP',sans-serif;
+  cursor:pointer;letter-spacing:.5px;
+  transition:opacity .2s;
+}
+.book-btn:hover{opacity:.85}
+
+/* ===== モーダル（詳細・レビュー） ===== */
+.modal-overlay{
+  display:none;position:fixed;inset:0;
+  background:rgba(0,0,0,.75);z-index:1000;
+  align-items:flex-end;justify-content:center;
+  backdrop-filter:blur(4px);
+}
+.modal-overlay.open{display:flex}
+.modal{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:20px 20px 0 0;
+  width:100%;max-width:480px;
+  max-height:88vh;overflow-y:auto;
+  padding:0 0 40px;
+  animation:slideUp .3s ease;
+}
+@keyframes slideUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
+.modal-handle{
+  width:40px;height:4px;background:var(--border2);
+  border-radius:2px;margin:12px auto 16px;
+}
+.modal-header{
+  padding:0 18px 14px;
+  border-bottom:1px solid var(--border);
+  display:flex;justify-content:space-between;align-items:flex-start;
+}
+.modal-title{
+  font-family:'Noto Serif JP',serif;
+  font-size:17px;font-weight:700;color:var(--text);
+  line-height:1.4;flex:1;margin-right:12px;
+}
+.modal-close{
+  background:none;border:none;color:var(--muted);
+  font-size:22px;cursor:pointer;line-height:1;padding:0;
+  transition:color .2s;flex-shrink:0;
+}
+.modal-close:hover{color:var(--text)}
+.modal-body{padding:16px 18px}
+.modal-img{
+  height:160px;background:linear-gradient(135deg,var(--surface2),var(--surface3));
+  display:flex;align-items:center;justify-content:center;
+  font-size:60px;border-radius:var(--radius-sm);margin-bottom:14px;overflow:hidden;
+}
+.detail-row{display:flex;gap:8px;margin-bottom:8px;align-items:flex-start}
+.detail-icon{color:var(--gold);font-size:14px;flex-shrink:0;margin-top:1px}
+.detail-text{font-size:12px;color:var(--text2);line-height:1.6}
+.detail-label{font-size:11px;color:var(--muted);margin-top:14px;margin-bottom:4px;letter-spacing:1px}
+.tags-wrap{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.tag{
+  background:var(--surface2);border:1px solid var(--border);
+  border-radius:20px;padding:4px 10px;font-size:10px;color:var(--muted);
+}
+
+/* ===== レビュー ===== */
+.review-list{margin-bottom:16px}
+.review-item{
+  background:var(--surface2);border:1px solid var(--border);
+  border-radius:var(--radius-sm);padding:12px;margin-bottom:8px;
+}
+.review-top{display:flex;justify-content:space-between;margin-bottom:6px;align-items:center}
+.review-author{font-size:12px;font-weight:700;color:var(--text2)}
+.review-stars{font-size:12px;color:var(--gold)}
+.review-date{font-size:10px;color:var(--muted)}
+.review-text{font-size:12px;color:var(--muted);line-height:1.7}
+.review-form-title{
+  font-size:13px;font-weight:700;color:var(--text);
+  margin-bottom:12px;
+}
+.form-group{margin-bottom:10px}
+.form-label{font-size:11px;color:var(--muted);margin-bottom:4px;display:block;letter-spacing:.5px}
+.form-input,.form-textarea{
+  width:100%;background:var(--surface3);
+  border:1px solid var(--border);border-radius:var(--radius-sm);
+  color:var(--text);font-family:'Noto Sans JP',sans-serif;
+  font-size:13px;padding:10px 12px;outline:none;transition:border-color .2s;
+}
+.form-input:focus,.form-textarea:focus{border-color:var(--gold-dark)}
+.form-textarea{resize:vertical;min-height:80px;line-height:1.6}
+.star-input{display:flex;gap:4px;margin-bottom:10px}
+.star-btn{
+  background:none;border:none;font-size:24px;cursor:pointer;
+  color:var(--border2);transition:color .15s;padding:0;
+}
+.star-btn.on{color:var(--gold)}
+.submit-btn{
+  width:100%;
+  background:linear-gradient(135deg,var(--gold) 0%,var(--gold-dark) 100%);
+  color:var(--bg);border:none;
+  padding:12px;border-radius:var(--radius-sm);
+  font-size:13px;font-weight:700;
+  font-family:'Noto Sans JP',sans-serif;
+  cursor:pointer;letter-spacing:1px;transition:opacity .2s;margin-top:4px;
+}
+.submit-btn:hover{opacity:.85}
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent);margin:20px 0}
+
+/* ===== ログインモーダル ===== */
+.login-modal{
+  padding:30px 24px;text-align:center;
+}
+.login-icon{font-size:48px;margin-bottom:16px}
+.login-title{
+  font-family:'Noto Serif JP',serif;
+  font-size:18px;font-weight:700;color:var(--text);
+  margin-bottom:8px;
+}
+.login-desc{font-size:12px;color:var(--muted);line-height:1.7;margin-bottom:24px}
+.google-btn{
+  width:100%;background:#fff;color:#1f1f1f;
+  border:none;border-radius:var(--radius-sm);
+  padding:12px;font-size:13px;font-weight:700;
+  font-family:'Noto Sans JP',sans-serif;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;
+  transition:opacity .2s;margin-bottom:10px;
+}
+.google-btn:hover{opacity:.9}
+.google-logo{width:18px;height:18px}
+.cancel-link{font-size:11px;color:var(--muted);cursor:pointer;text-decoration:underline}
+.cancel-link:hover{color:var(--text2)}
+
+/* ===== ログインユーザー情報 ===== */
+.user-card{
+  background:var(--surface2);border:1px solid var(--border);
+  border-radius:var(--radius-sm);padding:14px 16px;
+  display:flex;align-items:center;gap:12px;margin-bottom:14px;
+}
+.user-avatar{
+  width:40px;height:40px;border-radius:50%;
+  background:linear-gradient(135deg,var(--gold-dark),var(--gold));
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;flex-shrink:0;
+}
+.user-name{font-size:14px;font-weight:700;color:var(--text)}
+.user-sub{font-size:11px;color:var(--muted)}
+.logout-btn{
+  margin-left:auto;background:none;border:1px solid var(--border2);
+  color:var(--muted);border-radius:var(--radius-sm);
+  padding:5px 12px;font-size:11px;font-family:'Noto Sans JP',sans-serif;
+  cursor:pointer;transition:all .2s;
+}
+.logout-btn:hover{border-color:var(--red);color:var(--red)}
+
+/* ===== お気に入りセクション ===== */
+.fav-empty{
+  text-align:center;padding:40px 20px;
+  color:var(--muted);font-size:13px;
+}
+.fav-empty .fav-icon{font-size:40px;margin-bottom:12px}
+
+/* ===== ボトムナビ ===== */
+.bottom-nav{
+  position:fixed;bottom:0;left:0;right:0;
+  background:rgba(24,19,16,0.97);
+  border-top:1px solid var(--border);
+  display:flex;padding:8px 0 20px;
+  z-index:100;max-width:480px;margin:0 auto;
+  backdrop-filter:blur(12px);
+}
+.nav-item{
+  flex:1;display:flex;flex-direction:column;
+  align-items:center;gap:2px;
+  font-size:9px;color:var(--muted);cursor:pointer;
+  transition:color .2s;letter-spacing:.5px;
+  padding:4px 0;
+}
+.nav-item.active{color:var(--gold)}
+.nav-icon{font-size:20px}
+.nav-badge{
+  background:var(--red);color:#fff;
+  font-size:9px;font-weight:700;
+  border-radius:20px;padding:1px 5px;
+  margin-top:-4px;display:none;
+}
+.nav-badge.show{display:block}
+
+/* ===== 空結果 ===== */
+.no-result{
+  text-align:center;padding:40px 20px;
+  color:var(--muted);font-size:13px;
+}
+.no-result .nr-icon{font-size:40px;margin-bottom:12px}
+
+/* ===== トースト ===== */
+.toast{
+  position:fixed;bottom:80px;left:50%;transform:translateX(-50%) translateY(20px);
+  background:var(--surface3);border:1px solid var(--border2);
+  color:var(--text);font-size:12px;
+  padding:10px 20px;border-radius:20px;
+  white-space:nowrap;opacity:0;transition:all .3s;z-index:999;
+  pointer-events:none;
+}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* ===== 予約タブ ===== */
+.booking-section{
+  text-align:center;padding:40px 20px;
+  color:var(--muted);font-size:13px;
+}
+.booking-section a{color:var(--gold)}
+
+/* ===== ページ切り替え ===== */
+.page{display:none}
+.page.active{display:block}
+
+/* ===== スクロールアニメーション ===== */
+@keyframes fadeInUp{
+  from{opacity:0;transform:translateY(16px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.spot-card{animation:fadeInUp .35s ease forwards}
+.spot-card:nth-child(2){animation-delay:.05s}
+.spot-card:nth-child(3){animation-delay:.1s}
+.spot-card:nth-child(4){animation-delay:.15s}
+.spot-card:nth-child(5){animation-delay:.2s}
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+<!-- ===== ヘッダー ===== -->
+<header>
+  <div class="hd-inner">
+    <div class="hd-top">
+      <div>
+        <div class="logo">かんとうたいけん</div>
+        <span class="logo-sub">KANTO TAIKEN</span>
+      </div>
+      <div class="hd-right">
+        <button class="auth-btn" id="authBtn" onclick="openLogin()">ログイン</button>
+      </div>
+    </div>
+
+    <div class="search-wrap">
+      <span class="s-icon">🔍</span>
+      <input type="text" id="searchInput" placeholder="体験・エリア・キーワードで探す" oninput="handleSearch()">
+      <button class="clear-btn" id="clearBtn" onclick="clearSearch()" style="display:none">✕</button>
+    </div>
+
+    <div class="area-scroll" id="areaScroll">
+      <div class="area-tag active" data-area="all" onclick="setArea(this)">すべて</div>
+      <div class="area-tag" data-area="浅草" onclick="setArea(this)">浅草</div>
+      <div class="area-tag" data-area="鎌倉" onclick="setArea(this)">鎌倉</div>
+      <div class="area-tag" data-area="日光" onclick="setArea(this)">日光</div>
+      <div class="area-tag" data-area="箱根" onclick="setArea(this)">箱根</div>
+      <div class="area-tag" data-area="川越" onclick="setArea(this)">川越</div>
+      <div class="area-tag" data-area="横浜" onclick="setArea(this)">横浜</div>
+      <div class="area-tag" data-area="秩父" onclick="setArea(this)">秩父</div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== メインページ：さがす ===== -->
+<main id="pageSearch" class="page active">
+  <!-- 広告スロット①（AdSense審査通過後に以下コメントを置換） -->
+  <div class="ad-slot" id="adTop">
+    📢 広告スペース（AdSense設置箇所①：ページトップ）<br>
+    <small><!-- ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXX" data-ad-slot="0000000001" data-ad-format="auto" data-full-width-responsive="true"></ins --></small>
+  </div>
+
+  <!-- カテゴリ -->
+  <div class="sec-label">CATEGORY</div>
+  <div class="cat-grid" id="catGrid">
+    <div class="cat-item" data-cat="all" onclick="setCat(this)">
+      <span class="cat-em">🗾</span><span class="cat-name">すべて</span>
+    </div>
+    <div class="cat-item" data-cat="着物・浴衣" onclick="setCat(this)">
+      <span class="cat-em">👘</span><span class="cat-name">着物・浴衣</span>
+    </div>
+    <div class="cat-item" data-cat="ものづくり" onclick="setCat(this)">
+      <span class="cat-em">💍</span><span class="cat-name">ものづくり</span>
+    </div>
+    <div class="cat-item" data-cat="料理・食" onclick="setCat(this)">
+      <span class="cat-em">🍳</span><span class="cat-name">料理・食</span>
+    </div>
+    <div class="cat-item" data-cat="アート" onclick="setCat(this)">
+      <span class="cat-em">🎨</span><span class="cat-name">アート</span>
+    </div>
+    <div class="cat-item" data-cat="アウトドア" onclick="setCat(this)">
+      <span class="cat-em">🏄</span><span class="cat-name">アウトドア</span>
+    </div>
+    <div class="cat-item" data-cat="癒し・禅" onclick="setCat(this)">
+      <span class="cat-em">🧘</span><span class="cat-name">癒し・禅</span>
+    </div>
+    <div class="cat-item" data-cat="伝統文化" onclick="setCat(this)">
+      <span class="cat-em">🎭</span><span class="cat-name">伝統文化</span>
+    </div>
+    <div class="cat-item" data-cat="農業体験" onclick="setCat(this)">
+      <span class="cat-em">🌿</span><span class="cat-name">農業体験</span>
+    </div>
+  </div>
+
+  <!-- フィルター -->
+  <div class="filter-bar" id="filterBar">
+    <div class="filter-chip active" data-price="all" onclick="setPrice(this)">料金：すべて</div>
+    <div class="filter-chip" data-price="0" onclick="setPrice(this)">無料</div>
+    <div class="filter-chip" data-price="3000" onclick="setPrice(this)">〜3,000円</div>
+    <div class="filter-chip" data-price="5000" onclick="setPrice(this)">〜5,000円</div>
+    <div class="filter-chip" data-price="10000" onclick="setPrice(this)">〜10,000円</div>
+    <div class="filter-chip" data-price="10001" onclick="setPrice(this)">10,000円〜</div>
+  </div>
+
+  <!-- 結果バー -->
+  <div class="result-bar">
+    <div class="result-count">検索結果：<strong id="resultCount">0</strong>件</div>
+    <div class="sort-wrap">
+      <select class="sort-select" onchange="setSort(this)">
+        <option value="popular">人気順</option>
+        <option value="cheap">料金が安い順</option>
+        <option value="new">新着順</option>
+      </select>
+      <span class="sort-arrow">▼</span>
+    </div>
+  </div>
+
+  <!-- おすすめラベル -->
+  <div class="sec-label">RECOMMEND</div>
+
+  <!-- スポットカードリスト -->
+  <div id="spotList"></div>
+
+  <!-- 空結果 -->
+  <div class="no-result" id="noResult" style="display:none">
+    <div class="nr-icon">🔍</div>
+    条件に合う体験が見つかりませんでした。<br>エリア・カテゴリ・キーワードを変えてみてください。
+  </div>
+
+  <!-- 広告スロット②（検索結果下） -->
+  <div class="ad-slot" id="adBottom" style="margin-top:10px">
+    📢 広告スペース（AdSense設置箇所②：検索結果下）<br>
+    <small><!-- ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXX" data-ad-slot="0000000002" data-ad-format="auto" data-full-width-responsive="true"></ins --></small>
+  </div>
+</main>
+
+<!-- ===== メインページ：保存 ===== -->
+<main id="pageFav" class="page" style="padding:18px 14px 100px">
+  <div class="sec-label">SAVED</div>
+  <div id="favList"></div>
+  <div class="fav-empty" id="favEmpty">
+    <div class="fav-icon">❤️</div>
+    お気に入りはまだありません。<br>気になる体験をハートで保存しよう。
+  </div>
+</main>
+
+<!-- ===== メインページ：予約 ===== -->
+<main id="pageBook" class="page" style="padding:18px 14px 100px">
+  <div class="sec-label">BOOKING</div>
+  <div class="booking-section">
+    <div style="font-size:48px;margin-bottom:16px">📅</div>
+    <div style="font-size:15px;font-weight:700;color:var(--text);margin-bottom:8px;font-family:'Noto Serif JP',serif">アソビューで予約する</div>
+    <p style="font-size:12px;color:var(--muted);line-height:1.8;margin-bottom:20px">
+      各体験の「予約する」ボタンからアソビューの<br>予約ページへ移動します。<br>アソビューのアカウントで安心・簡単に予約できます。
+    </p>
+    <!-- アソビューアフィリエイトURL設置箇所 -->
+    <!-- 以下のhrefを正式なアフィリエイトURLに変更してください -->
+    <a href="https://www.asoview.com/" target="_blank" rel="noopener"
+       style="display:inline-block;background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:var(--bg);padding:12px 28px;border-radius:20px;font-size:13px;font-weight:700;text-decoration:none;letter-spacing:.5px">
+      アソビューTOPへ
+    </a>
+    <p style="font-size:10px;color:var(--muted);margin-top:16px">※当サイトはアソビューのアフィリエイトプログラムに参加しています</p>
+  </div>
+</main>
+
+<!-- ===== メインページ：マイページ ===== -->
+<main id="pageMypage" class="page" style="padding:18px 14px 100px">
+  <div class="sec-label">MYPAGE</div>
+  <div id="mypageContent">
+    <!-- ログイン時 -->
+    <div id="mypageLoggedIn" style="display:none">
+      <div class="user-card">
+        <div class="user-avatar">👤</div>
+        <div>
+          <div class="user-name" id="displayName">ゲスト</div>
+          <div class="user-sub" id="displayEmail">未ログイン</div>
+        </div>
+        <button class="logout-btn" onclick="doLogout()">ログアウト</button>
+      </div>
+      <div class="divider"></div>
+      <div class="sec-label">SAVED COUNT</div>
+      <div style="background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px;margin-bottom:14px;display:flex;align-items:center;gap:12px">
+        <span style="font-size:28px">❤️</span>
+        <div>
+          <div style="font-size:22px;font-weight:700;color:var(--gold)" id="favCount">0</div>
+          <div style="font-size:11px;color:var(--muted)">お気に入り件数</div>
+        </div>
+      </div>
+    </div>
+    <!-- 未ログイン時 -->
+    <div id="mypageLoggedOut">
+      <div style="text-align:center;padding:40px 20px">
+        <div style="font-size:48px;margin-bottom:16px">👤</div>
+        <div style="font-family:'Noto Serif JP',serif;font-size:16px;font-weight:700;color:var(--text);margin-bottom:8px">ログインして体験を保存しよう</div>
+        <p style="font-size:12px;color:var(--muted);line-height:1.8;margin-bottom:20px">Googleアカウントでかんたんログイン。<br>お気に入りの体験を保存できます。</p>
+        <button class="google-btn" onclick="openLogin()" style="max-width:280px;margin:0 auto">
+          <svg class="google-logo" viewBox="0 0 18 18" fill="none">
+            <path d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844a4.14 4.14 0 0 1-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615Z" fill="#4285F4"/>
+            <path d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18Z" fill="#34A853"/>
+            <path d="M3.964 10.71A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.71V4.958H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.042l3.007-2.332Z" fill="#FBBC05"/>
+            <path d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.958L3.964 6.29C4.672 4.163 6.656 3.58 9 3.58Z" fill="#EA4335"/>
+          </svg>
+          Googleでログイン
+        </button>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- ===== ボトムナビ ===== -->
+<nav class="bottom-nav">
+  <div class="nav-item active" id="nav0" onclick="switchPage(0)">
+    <span class="nav-icon">🔍</span><span>さがす</span>
+  </div>
+  <div class="nav-item" id="nav1" onclick="switchPage(1)">
+    <span class="nav-icon">❤️</span><span>保存</span>
+    <span class="nav-badge" id="favBadge">0</span>
+  </div>
+  <div class="nav-item" id="nav2" onclick="switchPage(2)">
+    <span class="nav-icon">📅</span><span>予約</span>
+  </div>
+  <div class="nav-item" id="nav3" onclick="switchPage(3)">
+    <span class="nav-icon">👤</span><span>マイページ</span>
+  </div>
+</nav>
+
+</div><!-- /wrapper -->
+
+<!-- ===== 詳細モーダル ===== -->
+<div class="modal-overlay" id="detailModal" onclick="closeModal(event,'detailModal')">
+  <div class="modal">
+    <div class="modal-handle"></div>
+    <div class="modal-header">
+      <div class="modal-title" id="modalTitle"></div>
+      <button class="modal-close" onclick="document.getElementById('detailModal').classList.remove('open')">✕</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<!-- ===== ログインモーダル ===== -->
+<div class="modal-overlay" id="loginModal" onclick="closeModal(event,'loginModal')">
+  <div class="modal">
+    <div class="modal-handle"></div>
+    <div class="login-modal">
+      <div class="login-icon">⛩️</div>
+      <div class="login-title">かんとうたいけんへようこそ</div>
+      <div class="login-desc">Googleアカウントでかんたんにログイン。<br>お気に入りの体験を保存したり、<br>レビューを投稿できます。</div>
+      <button class="google-btn" onclick="doLogin()">
+        <svg class="google-logo" viewBox="0 0 18 18" fill="none">
+          <path d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844a4.14 4.14 0 0 1-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615Z" fill="#4285F4"/>
+          <path d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18Z" fill="#34A853"/>
+          <path d="M3.964 10.71A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.71V4.958H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.042l3.007-2.332Z" fill="#FBBC05"/>
+          <path d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.958L3.964 6.29C4.672 4.163 6.656 3.58 9 3.58Z" fill="#EA4335"/>
+        </svg>
+        Googleでログイン
+      </button>
+      <div class="cancel-link" onclick="document.getElementById('loginModal').classList.remove('open')">あとで</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== トースト ===== -->
+<div class="toast" id="toast"></div>
+
+<script>
+/* ===== スポットデータ ===== */
+const SPOTS = [
+  {
+    id: 1,
+    name: '浅草 着物・浴衣レンタル体験',
+    area: '浅草',
+    address: '台東区浅草',
+    category: '着物・浴衣',
+    emoji: '👘',
+    price: 3500,
+    priceLabel: '¥3,500〜',
+    unit: '1名',
+    rating: 4.8,
+    reviews: 312,
+    desc: '浅草の街並みを着物・浴衣で散策。ヘアセット込みでそのまま観光へ。カップルや家族での記念に。',
+    tags: ['カップル', '家族', '初心者OK', '手ぶらOK', '雨天OK'],
+    badges: ['couple','family'],
+    popular: 10,
+    isNew: false,
+    /* アソビューアフィリエイトURL設置箇所 ↓ */
+    bookUrl: 'https://www.asoview.com/', /* ← 正式URLに変更 */
+    hours: '10:00〜18:00（最終受付16:30）',
+    duration: '約1〜2時間',
+    reviews_data: [
+      {author:'さくら', stars:5, date:'2025-03-10', text:'浴衣の種類が豊富で選ぶだけで楽しかった！スタッフさんも丁寧で、着付けも上手でした。浅草観光の写真が最高の思い出になりました。'},
+      {author:'たろう', stars:5, date:'2025-02-20', text:'彼女と一緒に着物体験。思ったより手頃で、写真映えも抜群。また来たいです！'},
+      {author:'みさき', stars:4, date:'2025-01-15', text:'子供2人連れで行きました。子ども用の着物もあって家族みんなで楽しめました。'},
+    ]
+  },
+  {
+    id: 2,
+    name: '鎌倉 シルバーリング制作体験',
+    area: '鎌倉',
+    address: '鎌倉市小町通り',
+    category: 'ものづくり',
+    emoji: '💍',
+    price: 6000,
+    priceLabel: '¥6,000〜',
+    unit: '1名',
+    rating: 4.9,
+    reviews: 198,
+    desc: '世界に一つだけの指輪を2人で制作。鎌倉観光と合わせて特別な思い出に。刻印サービスあり。',
+    tags: ['カップル', '記念日', '刻印OK', '手ぶらOK'],
+    badges: ['couple','popular'],
+    popular: 9,
+    isNew: false,
+    bookUrl: 'https://www.asoview.com/',
+    hours: '10:00〜17:00（完全予約制）',
+    duration: '約90分',
+    reviews_data: [
+      {author:'あかね', stars:5, date:'2025-03-15', text:'記念日に彼氏と参加。二人でリングを削って仕上げる時間が最高にロマンチック！刻印もきれいにしてもらえました。'},
+      {author:'けんじ', stars:5, date:'2025-02-28', text:'プロポーズ前に作りました。指導が丁寧で、完成度の高い指輪が仕上がりました。'},
+      {author:'ゆみ', stars:4, date:'2025-01-22', text:'鎌倉観光のついでに体験。手で削る感覚が楽しく、良い記念になりました。'},
+    ]
+  },
+  {
+    id: 3,
+    name: '益子 本格陶芸体験',
+    area: '秩父',
+    address: '栃木県益子町',
+    category: 'ものづくり',
+    emoji: '🏺',
+    price: 2800,
+    priceLabel: '¥2,800〜',
+    unit: '1名',
+    rating: 4.7,
+    reviews: 445,
+    desc: '陶芸の街・益子で職人に教わりながら本格的な器づくりを体験。作品は後日郵送。家族連れにも人気。',
+    tags: ['家族', '初心者OK', '子供可', '作品郵送'],
+    badges: ['family'],
+    popular: 8,
+    isNew: false,
+    bookUrl: 'https://www.asoview.com/',
+    hours: '9:00〜17:00',
+    duration: '約2時間',
+    reviews_data: [
+      {author:'ひろし', stars:5, date:'2025-03-01', text:'子供と一緒に初めての陶芸。先生が優しく教えてくれて、子供も夢中になっていました。届いた作品が食卓に並んでいます！'},
+      {author:'まりこ', stars:4, date:'2025-02-10', text:'ろくろが難しかったけど楽しかった。郵送してもらえるのが助かります。'},
+      {author:'だいき', stars:5, date:'2025-01-05', text:'家族4人で参加。それぞれの個性が出た作品になりました。またリピートしたい。'},
+    ]
+  },
+  {
+    id: 4,
+    name: '箱根 和紙ランプシェード制作',
+    area: '箱根',
+    address: '神奈川県箱根町',
+    category: 'アート',
+    emoji: '🏮',
+    price: 4500,
+    priceLabel: '¥4,500〜',
+    unit: '1名',
+    rating: 4.6,
+    reviews: 87,
+    desc: '箱根の老舗和紙工房で、世界に一つのランプシェードを制作。宿泊前の体験にもおすすめ。',
+    tags: ['カップル', '家族', 'インテリア', '作品持ち帰り'],
+    badges: ['couple','family'],
+    popular: 7,
+    isNew: true,
+    bookUrl: 'https://www.asoview.com/',
+    hours: '10:00〜16:00',
+    duration: '約2〜3時間',
+    reviews_data: [
+      {author:'はるか', stars:5, date:'2025-03-20', text:'箱根旅行の思い出に参加。できたランプシェードが部屋に飾られています。温かみのある光が最高！'},
+      {author:'とも', stars:4, date:'2025-02-14', text:'バレンタインデーに彼氏と参加。丁寧に指導してもらえました。'},
+    ]
+  },
+  {
+    id: 5,
+    name: '日光 わら細工・縄ない体験',
+    area: '日光',
+    address: '栃木県日光市',
+    category: '伝統文化',
+    emoji: '🌾',
+    price: 1500,
+    priceLabel: '¥1,500〜',
+    unit: '1名',
+    rating: 4.5,
+    reviews: 63,
+    desc: '日光の山里で、江戸時代から続く伝統の藁細工を体験。縄ない・草履など選べる。子供にも人気。',
+    tags: ['家族', '子供可', '伝統工芸', '初心者OK'],
+    badges: ['family'],
+    popular: 6,
+    isNew: false,
+    bookUrl: 'https://www.asoview.com/',
+    hours: '9:30〜16:00',
+    duration: '約1時間30分',
+    reviews_data: [
+      {author:'けい', stars:5, date:'2025-01-30', text:'子どもが縄ないに挑戦。最初は難しそうにしていたけど、完成したらとても嬉しそうでした。'},
+      {author:'なおみ', stars:4, date:'2024-12-20', text:'大人も夢中になれる体験です。日光観光と合わせて最高の一日でした。'},
+    ]
+  },
+  {
+    id: 6,
+    name: '川越 蔵の街 手打ちうどん体験',
+    area: '川越',
+    address: '埼玉県川越市',
+    category: '料理・食',
+    emoji: '🍜',
+    price: 2500,
+    priceLabel: '¥2,500〜',
+    unit: '1名',
+    rating: 4.7,
+    reviews: 201,
+    desc: '江戸時代の蔵を改装した工房で、地元産小麦を使った手打ちうどん作り。打ったうどんはその場で食べられる。',
+    tags: ['家族', '子供可', '食事付き', '初心者OK'],
+    badges: ['family','popular'],
+    popular: 8,
+    isNew: false,
+    bookUrl: 'https://www.asoview.com/',
+    hours: '10:00〜15:00',
+    duration: '約2時間（試食込み）',
+    reviews_data: [
+      {author:'ゆうと', stars:5, date:'2025-03-05', text:'子供2人連れで参加。こねる工程が楽しくて、自分で打ったうどんは格別においしかった！'},
+      {author:'めぐ', stars:5, date:'2025-02-18', text:'川越観光のついでに体験。うどんの弾力がすごくて感動しました。'},
+      {author:'りな', stars:4, date:'2025-01-08', text:'蔵の雰囲気も素敵で、体験も楽しかった。次は子供と一緒に来たいです。'},
+    ]
+  },
+  {
+    id: 7,
+    name: '横浜 本格フランス料理教室',
+    area: '横浜',
+    address: '神奈川県横浜市中区',
+    category: '料理・食',
+    emoji: '🍽️',
+    price: 7800,
+    priceLabel: '¥7,800〜',
+    unit: '1名',
+    rating: 4.8,
+    reviews: 134,
+    desc: 'フランス帰りのシェフが教える本格料理教室。コース料理を2人で作って食べる、特別なデートに。',
+    tags: ['カップル', '記念日', '食事付き', '少人数'],
+    badges: ['couple'],
+    popular: 7,
+    isNew: true,
+    bookUrl: 'https://www.asoview.com/',
+    hours: '11:00〜14:00 / 18:00〜21:00',
+    duration: '約3時間（食事込み）',
+    reviews_data: [
+      {author:'ゆかり', stars:5, date:'2025-03-25', text:'記念日に利用。シェフが丁寧に教えてくれて、一緒に作ったコース料理が最高においしかった！'},
+      {author:'だいすけ', stars:5, date:'2025-02-15', text:'バレンタインデーのお返しに妻とデートで参加。大満足でした。また行きたい。'},
+    ]
+  },
+  {
+    id: 8,
+    name: '秩父 里山農業体験・田植えと収穫',
+    area: '秩父',
+    address: '埼玉県秩父市',
+    category: '農業体験',
+    emoji: '🌱',
+    price: 3000,
+    priceLabel: '¥3,000〜',
+    unit: '1名',
+    rating: 4.6,
+    reviews: 156,
+    desc: '秩父の里山で、農家さんと一緒に田植えや野菜収穫を体験。採れたて野菜のランチ付き。子供連れに大人気。',
+    tags: ['家族', '子供可', '食事付き', '自然体験'],
+    badges: ['family'],
+    popular: 6,
+    isNew: false,
+    bookUrl: 'https://www.asoview.com/',
+    hours: '9:00〜15:00（季節により変動）',
+    duration: '約5時間（昼食込み）',
+    reviews_data: [
+      {author:'あいこ', stars:5, date:'2025-04-01', text:'子供が泥だらけになって楽しそうでした。採れたて野菜のランチが格別においしい！'},
+      {author:'たつや', stars:4, date:'2025-03-15', text:'普段農業に縁がない都会っ子でも楽しめます。秩父の自然も気持ちよかった。'},
+    ]
+  },
+  {
+    id: 9,
+    name: '浅草 忍者体験道場',
+    area: '浅草',
+    address: '台東区浅草',
+    category: '伝統文化',
+    emoji: '🥷',
+    price: 3800,
+    priceLabel: '¥3,800〜',
+    unit: '1名',
+    rating: 4.9,
+    reviews: 378,
+    desc: '忍者衣装に着替えて手裏剣投げや忍者修行に挑戦！外国人にも大人気。子供から大人まで楽しめる。',
+    tags: ['家族', '子供可', 'インバウンド人気', '手ぶらOK'],
+    badges: ['family','popular'],
+    popular: 10,
+    isNew: false,
+    bookUrl: 'https://www.asoview.com/',
+    hours: '10:00〜19:00',
+    duration: '約1時間',
+    reviews_data: [
+      {author:'しおり', stars:5, date:'2025-03-28', text:'子供が大喜び！手裏剣が的に当たった時の笑顔が最高でした。外国人の方も多くて国際的な雰囲気でした。'},
+      {author:'まさる', stars:5, date:'2025-02-20', text:'大人でも夢中になりました。忍者の衣装で写真撮影もしてもらえて大満足。'},
+    ]
+  },
+  {
+    id: 10,
+    name: '鎌倉 坐禅・瞑想体験',
+    area: '鎌倉',
+    address: '鎌倉市山ノ内',
+    category: '癒し・禅',
+    emoji: '🧘',
+    price: 2000,
+    priceLabel: '¥2,000〜',
+    unit: '1名',
+    rating: 4.8,
+    reviews: 289,
+    desc: '築500年以上の禅寺で本格坐禅体験。住職の法話と坐禅で心を整える、特別なひとときを。早朝プランあり。',
+    tags: ['カップル', '一人OK', 'リフレッシュ', '早朝プランあり'],
+    badges: ['couple'],
+    popular: 9,
+    isNew: false,
+    bookUrl: 'https://www.asoview.com/',
+    hours: '6:00〜8:00（早朝） / 13:00〜15:00（午後）',
+    duration: '約2時間',
+    reviews_data: [
+      {author:'のりこ', stars:5, date:'2025-03-10', text:'早朝の坐禅に参加。鳥の声を聞きながら静かに坐禅する時間が本当に贅沢でした。住職のお話も深くて感動。'},
+      {author:'よしき', stars:5, date:'2025-01-20', text:'日頃のストレスが一気にリセットされた気がします。月1で来たい。'},
+    ]
+  },
+  {
+    id: 11,
+    name: '横浜 SUPヨガ体験',
+    area: '横浜',
+    address: '神奈川県横浜市金沢区',
+    category: 'アウトドア',
+    emoji: '🏄',
+    price: 5500,
+    priceLabel: '¥5,500〜',
+    unit: '1名',
+    rating: 4.7,
+    reviews: 112,
+    desc: '海の上のボードの上でヨガ。非日常的な体験でリフレッシュ。初心者歓迎、インストラクターが丁寧にサポート。',
+    tags: ['カップル', '一人OK', '初心者OK', 'インストラクター付き'],
+    badges: ['couple','new'],
+    popular: 7,
+    isNew: true,
+    bookUrl: 'https://www.asoview.com/',
+    hours: '8:00〜10:00 / 14:00〜16:00',
+    duration: '約2時間',
+    reviews_data: [
+      {author:'さやか', stars:5, date:'2025-04-05', text:'海の上でのヨガは最高の体験！バランスを取るのが難しくて何度も笑いが出ました。インストラクターが親切で安心して参加できました。'},
+      {author:'かずや', stars:4, date:'2025-03-22', text:'彼女と参加。海の上は気持ちいいし、普通のヨガより断然楽しかった。'},
+    ]
+  },
+  {
+    id: 12,
+    name: '川越 藍染め・絞り染め体験',
+    area: '川越',
+    address: '埼玉県川越市',
+    category: 'アート',
+    emoji: '🎨',
+    price: 4000,
+    priceLabel: '¥4,000〜',
+    unit: '1名',
+    rating: 4.6,
+    reviews: 93,
+    desc: '江戸の街並みが残る川越で、伝統の藍染め体験。ハンカチやTシャツを自分だけの模様に染め上げよう。',
+    tags: ['家族', 'カップル', '作品持ち帰り', '初心者OK'],
+    badges: ['family','couple'],
+    popular: 6,
+    isNew: false,
+    bookUrl: 'https://www.asoview.com/',
+    hours: '10:00〜17:00',
+    duration: '約2時間',
+    reviews_data: [
+      {author:'りょうこ', stars:5, date:'2025-02-28', text:'世界に一つの模様が作れて大満足！染め上がったTシャツが今でも愛用品です。'},
+      {author:'たかし', stars:4, date:'2025-01-15', text:'子供と一緒に参加。染めた布を広げた瞬間の感動は忘れられません。'},
+    ]
+  },
+];
+
+/* ===== 状態管理 ===== */
+let state = {
+  area: 'all',
+  cat: 'all',
+  price: 'all',
+  sort: 'popular',
+  keyword: '',
+  favs: JSON.parse(localStorage.getItem('kt_favs') || '[]'),
+  userReviews: JSON.parse(localStorage.getItem('kt_reviews') || '{}'),
+  isLoggedIn: !!localStorage.getItem('kt_user'),
+  user: JSON.parse(localStorage.getItem('kt_user') || 'null'),
+  currentPage: 0,
+};
+
+/* ===== フィルタリング ===== */
+function getFiltered() {
+  let spots = [...SPOTS];
+
+  // キーワード
+  if (state.keyword) {
+    const kw = state.keyword.toLowerCase();
+    spots = spots.filter(s =>
+      s.name.includes(kw) || s.area.includes(kw) ||
+      s.category.includes(kw) || s.desc.includes(kw) ||
+      s.tags.some(t => t.includes(kw))
+    );
+  }
+
+  // エリア
+  if (state.area !== 'all') spots = spots.filter(s => s.area === state.area);
+
+  // カテゴリ
+  if (state.cat !== 'all') spots = spots.filter(s => s.category === state.cat);
+
+  // 料金
+  if (state.price !== 'all') {
+    const p = parseInt(state.price);
+    if (p === 0) spots = spots.filter(s => s.price === 0);
+    else if (p === 10001) spots = spots.filter(s => s.price > 10000);
+    else spots = spots.filter(s => s.price <= p);
+  }
+
+  // ソート
+  if (state.sort === 'popular') spots.sort((a,b) => b.popular - a.popular);
+  else if (state.sort === 'cheap') spots.sort((a,b) => a.price - b.price);
+  else if (state.sort === 'new') spots.sort((a,b) => b.isNew - a.isNew || b.id - a.id);
+
+  return spots;
+}
+
+/* ===== カードHTML生成 ===== */
+function renderCard(s, forFav = false) {
+  const isFav = state.favs.includes(s.id);
+  const badgeHTML = s.badges.map(b => {
+    if (b === 'couple') return '<span class="badge b-couple">💑 カップル</span>';
+    if (b === 'family') return '<span class="badge b-family">👨‍👩‍👧 家族OK</span>';
+    if (b === 'popular') return '<span class="badge b-popular">🔥 人気No.1</span>';
+    if (b === 'new') return '<span class="badge b-new">✨ 新着</span>';
+    return '';
+  }).join('');
+
+  return `
+<div class="spot-card" id="card-${s.id}" onclick="openDetail(${s.id})">
+  <div class="spot-img">
+    ${s.emoji}
+    <div class="spot-badges">${badgeHTML}</div>
+    <button class="fav-btn ${isFav ? 'active' : ''}" id="fav-${s.id}"
+      onclick="event.stopPropagation();toggleFav(${s.id})"
+      title="${isFav ? 'お気に入りを解除' : 'お気に入りに追加'}">
+      ${isFav ? '❤️' : '🤍'}
+    </button>
+  </div>
+  <div class="spot-body">
+    <div class="spot-name">${s.name}</div>
+    <div class="spot-meta">
+      <span class="spot-area">📍 ${s.address}</span>
+      <span class="spot-rating">★ ${s.rating}（${s.reviews}件）</span>
+    </div>
+    <div class="spot-desc">${s.desc}</div>
+    <div class="spot-footer">
+      <div class="spot-price">${s.priceLabel}<span> / ${s.unit}</span></div>
+      <button class="book-btn" onclick="event.stopPropagation();doBook(${s.id})">予約する</button>
+    </div>
+  </div>
+</div>`;
+}
+
+/* ===== レンダリング ===== */
+function renderSpots() {
+  const filtered = getFiltered();
+  const list = document.getElementById('spotList');
+  const noResult = document.getElementById('noResult');
+  const count = document.getElementById('resultCount');
+  count.textContent = filtered.length;
+
+  if (filtered.length === 0) {
+    list.innerHTML = '';
+    noResult.style.display = 'block';
+  } else {
+    noResult.style.display = 'none';
+    list.innerHTML = filtered.map(s => renderCard(s)).join('');
+  }
+}
+
+function renderFavs() {
+  const list = document.getElementById('favList');
+  const empty = document.getElementById('favEmpty');
+  const favSpots = SPOTS.filter(s => state.favs.includes(s.id));
+  if (favSpots.length === 0) {
+    list.innerHTML = '';
+    empty.style.display = 'block';
+  } else {
+    empty.style.display = 'none';
+    list.innerHTML = favSpots.map(s => renderCard(s, true)).join('');
+  }
+  updateFavBadge();
+  updateFavCount();
+}
+
+function updateFavBadge() {
+  const badge = document.getElementById('favBadge');
+  const n = state.favs.length;
+  badge.textContent = n;
+  badge.className = 'nav-badge' + (n > 0 ? ' show' : '');
+}
+
+function updateFavCount() {
+  const el = document.getElementById('favCount');
+  if (el) el.textContent = state.favs.length;
+}
+
+/* ===== 操作ハンドラ ===== */
+function setArea(el) {
+  document.querySelectorAll('.area-tag').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  state.area = el.dataset.area;
+  renderSpots();
+}
+
+function setCat(el) {
+  document.querySelectorAll('.cat-item').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  state.cat = el.dataset.cat;
+  renderSpots();
+}
+
+function setPrice(el) {
+  document.querySelectorAll('.filter-chip').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  state.price = el.dataset.price;
+  renderSpots();
+}
+
+function setSort(sel) {
+  state.sort = sel.value;
+  renderSpots();
+}
+
+function handleSearch() {
+  const input = document.getElementById('searchInput');
+  state.keyword = input.value.trim();
+  document.getElementById('clearBtn').style.display = state.keyword ? 'block' : 'none';
+  renderSpots();
+}
+
+function clearSearch() {
+  document.getElementById('searchInput').value = '';
+  state.keyword = '';
+  document.getElementById('clearBtn').style.display = 'none';
+  renderSpots();
+}
+
+/* ===== お気に入り ===== */
+function toggleFav(id) {
+  const idx = state.favs.indexOf(id);
+  if (idx === -1) {
+    if (!state.isLoggedIn) { openLogin(); return; }
+    state.favs.push(id);
+    showToast('❤️ お気に入りに追加しました');
+  } else {
+    state.favs.splice(idx, 1);
+    showToast('🤍 お気に入りを解除しました');
+  }
+  localStorage.setItem('kt_favs', JSON.stringify(state.favs));
+
+  // ボタン更新
+  const btn = document.getElementById(`fav-${id}`);
+  if (btn) {
+    const isFav = state.favs.includes(id);
+    btn.className = 'fav-btn' + (isFav ? ' active' : '');
+    btn.innerHTML = isFav ? '❤️' : '🤍';
+  }
+  updateFavBadge();
+  updateFavCount();
+  if (state.currentPage === 1) renderFavs();
+}
+
+/* ===== 詳細モーダル ===== */
+function openDetail(id) {
+  const s = SPOTS.find(x => x.id === id);
+  if (!s) return;
+  document.getElementById('modalTitle').textContent = s.name;
+
+  const userRevs = state.userReviews[id] || [];
+  const allRevs = [...s.reviews_data, ...userRevs];
+  const revHTML = allRevs.map(r => `
+    <div class="review-item">
+      <div class="review-top">
+        <span class="review-author">${r.author}</span>
+        <span class="review-stars">${'★'.repeat(r.stars)}${'☆'.repeat(5-r.stars)}</span>
+      </div>
+      <div class="review-date">${r.date}</div>
+      <div class="review-text">${r.text}</div>
+    </div>
+  `).join('');
+
+  const tagsHTML = s.tags.map(t => `<span class="tag">${t}</span>`).join('');
+
+  document.getElementById('modalBody').innerHTML = `
+    <div class="modal-img">${s.emoji}</div>
+    <div class="detail-row"><span class="detail-icon">📍</span><span class="detail-text">${s.address}</span></div>
+    <div class="detail-row"><span class="detail-icon">⏰</span><span class="detail-text">${s.hours}</span></div>
+    <div class="detail-row"><span class="detail-icon">⌛</span><span class="detail-text">所要時間：${s.duration}</span></div>
+    <div class="detail-row"><span class="detail-icon">💰</span><span class="detail-text">${s.priceLabel} / ${s.unit}</span></div>
+    <div class="detail-label">こんな方におすすめ</div>
+    <div class="tags-wrap">${tagsHTML}</div>
+    <div style="margin-bottom:14px">${s.desc}</div>
+    <div class="detail-row">
+      <button class="book-btn" style="width:100%;padding:12px;font-size:13px"
+        onclick="doBook(${s.id})">🎫 アソビューで予約する</button>
+    </div>
+    <div class="divider"></div>
+    <div class="sec-label" style="margin-bottom:12px">REVIEWS <em>${allRevs.length}件</em></div>
+    <div class="review-list">${revHTML}</div>
+    <div class="review-form-title">✏️ レビューを投稿する</div>
+    <div class="form-group">
+      <div class="form-label">評価</div>
+      <div class="star-input" id="starInput">
+        ${[1,2,3,4,5].map(n => `<button class="star-btn" data-val="${n}" onclick="setStar(${n},${id})">☆</button>`).join('')}
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="form-label">お名前</div>
+      <input class="form-input" id="rvName" type="text" placeholder="ニックネームで可"
+        value="${state.isLoggedIn && state.user ? state.user.name.split(' ')[0] : ''}">
+    </div>
+    <div class="form-group">
+      <div class="form-label">レビュー内容</div>
+      <textarea class="form-textarea" id="rvText" placeholder="体験の感想をぜひ教えてください"></textarea>
+    </div>
+    <button class="submit-btn" onclick="submitReview(${id})">レビューを投稿する</button>
+  `;
+  document.getElementById('detailModal').classList.add('open');
+}
+
+let selectedStar = 0;
+function setStar(n, id) {
+  selectedStar = n;
+  document.querySelectorAll('#starInput .star-btn').forEach((btn, i) => {
+    btn.className = 'star-btn' + (i < n ? ' on' : '');
+    btn.textContent = i < n ? '★' : '☆';
+  });
+}
+
+function submitReview(spotId) {
+  if (!state.isLoggedIn) { openLogin(); return; }
+  const name = document.getElementById('rvName').value.trim();
+  const text = document.getElementById('rvText').value.trim();
+  if (!name || !text || selectedStar === 0) {
+    showToast('⚠️ 評価・お名前・内容を入力してください'); return;
+  }
+  const today = new Date().toISOString().slice(0,10);
+  const rev = { author: name, stars: selectedStar, date: today, text };
+  if (!state.userReviews[spotId]) state.userReviews[spotId] = [];
+  state.userReviews[spotId].push(rev);
+  localStorage.setItem('kt_reviews', JSON.stringify(state.userReviews));
+  showToast('✅ レビューを投稿しました！');
+  openDetail(spotId);
+}
+
+/* ===== 予約 ===== */
+function doBook(id) {
+  const s = SPOTS.find(x => x.id === id);
+  if (!s) return;
+  // アソビューアフィリエイトURL
+  // ※ 各スポットの bookUrl を正式なアフィリエイトURLに差し替えてください
+  window.open(s.bookUrl, '_blank', 'noopener');
+  showToast('🎫 アソビューの予約ページへ移動します');
+}
+
+/* ===== ログイン（モック：実装時はFirebase Auth等に差し替え） ===== */
+function openLogin() { document.getElementById('loginModal').classList.add('open'); }
+function doLogin() {
+  // ※ 本番実装時はGoogleアカウント認証（Firebase Auth / NextAuth等）に差し替えてください
+  const mockUser = { name: 'テストユーザー', email: 'test@example.com' };
+  state.isLoggedIn = true;
+  state.user = mockUser;
+  localStorage.setItem('kt_user', JSON.stringify(mockUser));
+  document.getElementById('loginModal').classList.remove('open');
+  updateAuthUI();
+  showToast('✅ ログインしました');
+}
+function doLogout() {
+  state.isLoggedIn = false;
+  state.user = null;
+  localStorage.removeItem('kt_user');
+  updateAuthUI();
+  showToast('👋 ログアウトしました');
+}
+function updateAuthUI() {
+  const btn = document.getElementById('authBtn');
+  if (state.isLoggedIn && state.user) {
+    btn.textContent = state.user.name.split(' ')[0];
+    btn.className = 'auth-btn logged';
+    document.getElementById('mypageLoggedIn').style.display = 'block';
+    document.getElementById('mypageLoggedOut').style.display = 'none';
+    document.getElementById('displayName').textContent = state.user.name;
+    document.getElementById('displayEmail').textContent = state.user.email;
+  } else {
+    btn.textContent = 'ログイン';
+    btn.className = 'auth-btn';
+    document.getElementById('mypageLoggedIn').style.display = 'none';
+    document.getElementById('mypageLoggedOut').style.display = 'block';
+  }
+  updateFavCount();
+}
+
+/* ===== ページ切り替え ===== */
+const PAGES = ['pageSearch','pageFav','pageBook','pageMypage'];
+function switchPage(idx) {
+  state.currentPage = idx;
+  PAGES.forEach((id, i) => {
+    document.getElementById(id).className = 'page' + (i === idx ? ' active' : '');
+    document.getElementById('nav'+i).className = 'nav-item' + (i === idx ? ' active' : '');
+  });
+  if (idx === 1) renderFavs();
+  if (idx === 3) updateAuthUI();
+}
+
+/* ===== モーダル共通 ===== */
+function closeModal(e, id) {
+  if (e.target === e.currentTarget) document.getElementById(id).classList.remove('open');
+}
+
+/* ===== トースト ===== */
+function showToast(msg) {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  setTimeout(() => el.classList.remove('show'), 2500);
+}
+
+/* ===== 初期化 ===== */
+function init() {
+  renderSpots();
+  updateFavBadge();
+  updateAuthUI();
+}
+init();
+</script>
+</body>
+</html>
