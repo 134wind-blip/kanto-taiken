@@ -16,7 +16,7 @@
     "badges": ["couple","family"],
     "popular": 10,
     "isNew": false,
-    "bookUrl": "https://www.asoview.com/item/activity/pln3000000001/",
+    "bookUrl": "https://www.asoview.com/search/?q=浅草+着物レンタル",
     "hours": "10:00〜18:00（最終受付16:30）",
     "duration": "約1〜2時間",
     "reviews_data": [
@@ -42,7 +42,7 @@
     "badges": ["couple","popular"],
     "popular": 9,
     "isNew": false,
-    "bookUrl": "https://www.asoview.com/item/activity/pln3000000002/",
+    "bookUrl": "https://www.asoview.com/search/?q=鎌倉+シルバーリング",
     "hours": "10:00〜17:00（完全予約制）",
     "duration": "約90分",
     "reviews_data": [
@@ -63,12 +63,12 @@
     "unit": "1名",
     "rating": 4.7,
     "reviews": 445,
-    "desc": "陶芸の街・益子で職人に教わりながら本格的な器づくりを体験。作品は後日郵送。家族連れにも人気。",
+    "desc": "陶芸 of 街・益子で職人に教わりながら本格的な器づくりを体験。作品は後日郵送。家族連れにも人気。",
     "tags": ["家族", "初心者OK", "子供可", "作品郵送"],
     "badges": ["family"],
     "popular": 8,
     "isNew": false,
-    "bookUrl": "https://www.asoview.com/item/activity/pln3000000003/",
+    "bookUrl": "https://www.asoview.com/search/?q=益子+陶芸",
     "hours": "9:00〜17:00",
     "duration": "約2時間",
     "reviews_data": [
@@ -94,7 +94,7 @@
     "badges": ["couple","family"],
     "popular": 7,
     "isNew": true,
-    "bookUrl": "https://www.asoview.com/item/activity/pln3000000004/",
+    "bookUrl": "https://www.asoview.com/search/?q=箱根+和紙ランプ",
     "hours": "10:00〜16:00",
     "duration": "約2〜3時間",
     "reviews_data": [
@@ -119,7 +119,7 @@
     "badges": ["family"],
     "popular": 6,
     "isNew": false,
-    "bookUrl": "https://www.asoview.com/item/activity/pln3000000005/",
+    "bookUrl": "https://www.asoview.com/search/?q=日光+わら細工",
     "hours": "9:30〜16:00",
     "duration": "約1時間30分",
     "reviews_data": [
@@ -144,11 +144,11 @@
     "badges": ["family","popular"],
     "popular": 8,
     "isNew": false,
-    "bookUrl": "https://www.asoview.com/item/activity/pln3000000006/",
+    "bookUrl": "https://www.asoview.com/search/?q=川越+うどん体験",
     "hours": "10:00〜15:00",
     "duration": "約2時間（試食込み）",
     "reviews_data": [
-      {"author":"ゆうと", "stars":5, "date":"2025-03-05", "text":"子供2人連れで参加。こねる工程が楽しくて、自分で打ったうどんは格別においしかった！"},
+      {"author":"ゆうto", "stars":5, "date":"2025-03-05", "text":"子供2人連れで参加。こねる工程が楽しくて、自分で打ったうどんは格別においしかった！"},
       {"author":"めぐ", "stars":5, "date":"2025-02-18", "text":"川越観光のついでに体験。うどんの弾力がすごくて感動しました。"},
       {"author":"りな", "stars":4, "date":"2025-01-08", "text":"蔵の雰囲気も素敵で、体験も楽しかった。次は子供と一緒に来たいです。"}
     ]
@@ -170,7 +170,7 @@
     "badges": ["couple"],
     "popular": 7,
     "isNew": true,
-    "bookUrl": "https://www.asoview.com/item/activity/pln3000000007/",
+    "bookUrl": "https://www.asoview.com/search/?q=横浜+料理教室",
     "hours": "11:00〜14:00 / 18:00〜21:00",
     "duration": "約3時間（食事込み）",
     "reviews_data": [
@@ -195,12 +195,12 @@
     "badges": ["family"],
     "popular": 6,
     "isNew": false,
-    "bookUrl": "https://www.asoview.com/item/activity/pln3000000008/",
+    "bookUrl": "https://www.asoview.com/search/?q=秩父+農業体験",
     "hours": "9:00〜15:00（季節により変動）",
     "duration": "約5時間（昼食込み）",
     "reviews_data": [
-      {"author":"あいこ", "stars":5, "date":"2025-04-01", "text":"子供が泥だらけになって楽しそうでした。採れたて野菜のランチが格別においしい！"},
-      {"author":"たつや", "stars":4, "date":"2025-03-15", "text":"普段農業に縁がない都会っ子でも楽しめます。秩父の自然も気持ちよかった。"}
+      {"author":"あいこ", "stars":5, "date":"2025-04-01", "text":"子供が泥だらけになって楽しそうでした。採れたて野菜 of ランチが格別においしい！"},
+      {"author":"tatsuya", "stars":4, "date":"2025-03-15", "text":"普段農業に縁がない都会っ子でも楽しめます。秩父の自然も気持ちよかった。"}
     ]
   },
   {
@@ -220,7 +220,7 @@
     "badges": ["family","popular"],
     "popular": 10,
     "isNew": false,
-    "bookUrl": "https://www.asoview.com/item/activity/pln3000000009/",
+    "bookUrl": "https://www.asoview.com/search/?q=浅草+忍者体験",
     "hours": "10:00〜19:00",
     "duration": "約1時間",
     "reviews_data": [
@@ -245,7 +245,7 @@
     "badges": ["couple"],
     "popular": 9,
     "isNew": false,
-    "bookUrl": "https://www.asoview.com/item/activity/pln3000000010/",
+    "bookUrl": "https://www.asoview.com/search/?q=鎌倉+坐禅",
     "hours": "6:00〜8:00（早朝） / 13:00〜15:00（午後）",
     "duration": "約2時間",
     "reviews_data": [
@@ -270,7 +270,7 @@
     "badges": ["couple","new"],
     "popular": 7,
     "isNew": true,
-    "bookUrl": "https://www.asoview.com/item/activity/pln3000000011/",
+    "bookUrl": "https://www.asoview.com/search/?q=横浜+SUPヨガ",
     "hours": "8:00〜10:00 / 14:00〜16:00",
     "duration": "約2時間",
     "reviews_data": [
@@ -295,7 +295,7 @@
     "badges": ["family","couple"],
     "popular": 6,
     "isNew": false,
-    "bookUrl": "https://www.asoview.com/item/activity/pln3000000012/",
+    "bookUrl": "https://www.asoview.com/search/?q=川越+藍染め",
     "hours": "10:00〜17:00",
     "duration": "約2時間",
     "reviews_data": [
