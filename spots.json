@@ -178,33 +178,33 @@
     },
     {
         "id": 5,
-        "name": "日光の社寺を着物で巡る うたかた",
+        "name": "日光着物レンタル処 COCON NIKKO",
         "area": "日光",
-        "address": "日光市中鉢石町918",
+        "address": "日光市石屋町425",
         "category": "着物・浴衣",
         "emoji": "👘",
         "image": "images/kimono_daikichi.png",
-        "price": 3800,
-        "priceLabel": "¥3,800〜",
+        "price": 3000,
+        "priceLabel": "¥3,000〜",
         "unit": "1名",
-        "rating": 4.9,
-        "reviews": 88,
-        "desc": "日光東照宮や神橋などの世界遺産まで好アクセス。日本の伝統的な着付け技術で、崩れにくく一日中楽に着ていられるのが特徴です。",
+        "rating": 4.8,
+        "reviews": 92,
+        "desc": "手ぶらで来店OK！日光東照宮や神橋などの世界遺産まで好アクセス。丁寧で着崩れしにくいプロの着付けで、一日中楽に着物で日光観光を楽しめます。",
         "tags": [
             "世界遺産近く",
             "丁寧な着付け",
-            "レトロ柄",
-            "ヘアセット付き",
-            "大人向け"
+            "手ぶらOK",
+            "豊富な種類",
+            "駅チカ"
         ],
         "badges": [
             "popular"
         ],
         "popular": 9,
         "isNew": false,
-        "bookUrl": "https://www.asoview.com/base/153163/",
-        "hours": "9:00〜17:00（最終返却16:30）",
-        "duration": "約45分",
+        "bookUrl": "https://www.asoview.com/base/151412/",
+        "hours": "9:30〜17:30",
+        "duration": "約45分（着付け）",
         "reviews_data": [
             {
                 "author": "あおい",
@@ -291,7 +291,7 @@
         ],
         "popular": 9,
         "isNew": false,
-        "bookUrl": "https://www.asoview.com/base/150616/",
+        "bookUrl": "https://www.asoview.com/base/153164/",
         "hours": "9:30〜17:30（火曜定休）",
         "duration": "約30分（着付け）",
         "reviews_data": [
@@ -400,24 +400,24 @@
     },
     {
         "id": 10,
-        "name": "鎌倉彫金工房",
+        "name": "ワークスタジオ瑠花（るか）",
         "area": "鎌倉",
-        "address": "鎌倉市御成町6-1",
+        "address": "鎌倉市由比ヶ浜1-1-10",
         "category": "ものづくり",
         "emoji": "💍",
         "image": "images/ring_making.png",
-        "price": 5000,
-        "priceLabel": "¥5,000〜",
+        "price": 6000,
+        "priceLabel": "¥6,000〜",
         "unit": "1名",
         "rating": 4.9,
-        "reviews": 320,
-        "desc": "世界にひとつだけのオリジナルペアリング・指輪をセルフメイド！職人が丁寧にサポートし、約2時間で本格的なシルバーリングが完成します。",
+        "reviews": 820,
+        "desc": "鎌倉駅徒歩6分。国家資格を持つ本物の彫金職人がマンツーマンで指導。世界に一つのシルバーリングが作れます。当日持ち帰りOK！",
         "tags": [
             "カップル",
-            "ペアリング",
-            "当日持ち帰り可",
-            "旅の記念",
-            "アットホーム"
+            "記念日",
+            "刻印無料",
+            "当日持ち帰り",
+            "完全予約制"
         ],
         "badges": [
             "couple",
@@ -425,21 +425,21 @@
         ],
         "popular": 10,
         "isNew": false,
-        "bookUrl": "https://www.asoview.com/base/151608/",
-        "hours": "9:00〜17:00",
-        "duration": "約2時間",
+        "bookUrl": "https://www.asoview.com/base/151513/",
+        "hours": "10:00〜18:00（最終受付16:30）",
+        "duration": "約90分",
         "reviews_data": [
             {
-                "author": "ともや",
+                "author": "ユウカ",
                 "stars": 5,
-                "date": "2026-05-09",
-                "text": "記念日にカップルで指輪を作りました。金属の棒からハンマーで叩いて丸め、磨きあげる工程すべてが楽しく、宝物になりました！"
+                "date": "2026-04-20",
+                "text": "記念日にペアリングを作りました！トントン叩いて磨く作業がすごく楽しくて、お揃いの指輪が作れて最高の思い出になりました。"
             },
             {
-                "author": "かなこ",
+                "author": "ショウ",
                 "stars": 5,
-                "date": "2026-04-22",
-                "text": "不器用なので不安でしたが、職人さんが優しく手伝ってくれたのでとても綺麗に仕上がりました。大満足です！"
+                "date": "2026-03-15",
+                "text": "職人さんの教え方が丁寧で面白く、不器用な自分でも綺麗に仕上がりました。刻印もその場で入れてもらえます！"
             }
         ]
     },
@@ -515,7 +515,7 @@
         ],
         "popular": 10,
         "isNew": false,
-        "bookUrl": "https://www.asoview.com/base/151978/",
+        "bookUrl": "https://www.asoview.com/base/162058/",
         "hours": "9:00〜17:00（公園開園時間に準ずる）",
         "duration": "約1〜2時間",
         "reviews_data": [
@@ -692,7 +692,7 @@
         ],
         "popular": 9,
         "isNew": false,
-        "bookUrl": "https://www.asoview.com/base/153123/",
+        "bookUrl": "https://www.asoview.com/spot/spot0000004410/",
         "hours": "10:00〜17:00（月曜・火曜定休）",
         "duration": "約1時間",
         "reviews_data": [
