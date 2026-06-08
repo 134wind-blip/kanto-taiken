@@ -674,6 +674,9 @@ main{padding:18px 14px 100px}
     <p style="font-size:12px;color:var(--muted);line-height:1.8;margin-bottom:20px">
       各体験の「予約する」ボタンからアソビューの<br>予約ページへ移動します。<br>アソビューのアカウントで安心・簡単に予約できます。
     </p>
+    <p style="font-size:10px;color:var(--muted);line-height:1.6;margin-bottom:20px;max-width:320px;margin-left:auto;margin-right:auto;">
+      ※掲載中の体験内容や価格はアソビュー！の登録情報に基づきますが、時期や店舗の都合により、プラン内容の変更や一時的な非表示が発生する場合があります。
+    </p>
     <!-- アソビューアフィリエイトURL設置箇所 -->
     <!-- 以下のhrefを正式なアフィリエイトURLに変更してください -->
     <a href="https://www.asoview.com/" target="_blank" rel="noopener"
@@ -1089,9 +1092,12 @@ function openDetail(id) {
     <div class="detail-label">こんな方におすすめ</div>
     <div class="tags-wrap">${tagsHTML}</div>
     <div style="margin-bottom:14px">${s.desc}</div>
-    <div class="detail-row">
+    <div class="detail-row" style="margin-bottom:4px;">
       <button class="book-btn" style="width:100%;padding:12px;font-size:13px"
         onclick="doBook(${s.id})">🎫 アソビューで予約する</button>
+    </div>
+    <div style="font-size:10px;color:var(--muted);line-height:1.5;text-align:center;margin-bottom:14px;padding:0 8px;">
+      ※時期や店舗の状況により、アソビュー！上でプランが表示されない、または体験内容・価格が変更されている場合があります。
     </div>
     <div class="divider"></div>
     <div class="sec-label" style="margin-bottom:12px">REVIEWS <em>${allRevs.length}件</em></div>
