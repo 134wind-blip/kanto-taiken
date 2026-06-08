@@ -816,7 +816,7 @@ main{padding:18px 14px 100px}
 
 <script>
 /* ===== アフィリエイト設定 ===== */
-const AFFILIATE_ID = ""; // 将来A8.net等のアフィリエイトIDが決まったら設定します
+const AFFILIATE_ID = "4B5PG7+F0LMU2+455G+61JSH";
 
 /* ===== スポットデータ ===== */
 let SPOTS = []; // spots.jsonからフェッチします
@@ -1246,6 +1246,18 @@ async function init() {
     updateFavBadge();
     updateAuthUI();
     handleHashRoute();
+    
+    // A8.net インプレッション計測用ピクセルの挿入
+    if (AFFILIATE_ID) {
+      const a8img = document.createElement('img');
+      a8img.border = "0";
+      a8img.width = "1";
+      a8img.height = "1";
+      a8img.src = `https://www13.a8.net/0.gif?a8mat=${AFFILIATE_ID}`;
+      a8img.alt = "";
+      a8img.style.display = "none";
+      document.body.appendChild(a8img);
+    }
   } catch (error) {
     console.error('Error loading spots:', error);
     showToast('⚠️ データの読み込みに失敗しました');
