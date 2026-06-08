@@ -8,7 +8,11 @@
 <meta property="og:title" content="かんとうたいけん｜関東の体験・アクティビティ予約">
 <meta property="og:description" content="関東圏の体験・アクティビティ検索サイト。カップル・子連れファミリーにおすすめの体験が見つかります。">
 <meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="favicon.png">
+<meta property="og:url" content="https://kanto-taiken.jp/">
 <meta property="og:image" content="https://kanto-taiken.jp/ogp.jpg">
+<!-- Google Identity Services (Google Login) -->
+<script src="https://accounts.google.com/gsi/client" async defer></script>
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3614842848028795" crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -556,6 +560,7 @@ main{padding:18px 14px 100px}
       <div class="area-tag" data-area="箱根" onclick="setArea(this)">箱根</div>
       <div class="area-tag" data-area="川越" onclick="setArea(this)">川越</div>
       <div class="area-tag" data-area="横浜" onclick="setArea(this)">横浜</div>
+      <div class="area-tag" data-area="湘南" onclick="setArea(this)">湘南</div>
       <div class="area-tag" data-area="秩父" onclick="setArea(this)">秩父</div>
     </div>
   </div>
@@ -717,15 +722,7 @@ main{padding:18px 14px 100px}
         <div style="font-size:48px;margin-bottom:16px">👤</div>
         <div style="font-family:'Noto Serif JP',serif;font-size:16px;font-weight:700;color:var(--text);margin-bottom:8px">ログインして体験を保存しよう</div>
         <p style="font-size:12px;color:var(--muted);line-height:1.8;margin-bottom:20px">Googleアカウントでかんたんログイン。<br>お気に入りの体験を保存できます。</p>
-        <button class="google-btn" onclick="openLogin()" style="max-width:280px;margin:0 auto">
-          <svg class="google-logo" viewBox="0 0 18 18" fill="none">
-            <path d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844a4.14 4.14 0 0 1-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615Z" fill="#4285F4"/>
-            <path d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18Z" fill="#34A853"/>
-            <path d="M3.964 10.71A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.71V4.958H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.042l3.007-2.332Z" fill="#FBBC05"/>
-            <path d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.958L3.964 6.29C4.672 4.163 6.656 3.58 9 3.58Z" fill="#EA4335"/>
-          </svg>
-          Googleでログイン
-        </button>
+        <div id="googleBtnContainerMypage" style="display:flex;justify-content:center;min-height:44px"></div>
       </div>
     </div>
     
@@ -786,15 +783,7 @@ main{padding:18px 14px 100px}
       <div class="login-icon">⛩️</div>
       <div class="login-title">かんとうたいけんへようこそ</div>
       <div class="login-desc">Googleアカウントでかんたんにログイン。<br>お気に入りの体験を保存したり、<br>レビューを投稿できます。</div>
-      <button class="google-btn" onclick="doLogin()">
-        <svg class="google-logo" viewBox="0 0 18 18" fill="none">
-          <path d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844a4.14 4.14 0 0 1-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615Z" fill="#4285F4"/>
-          <path d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18Z" fill="#34A853"/>
-          <path d="M3.964 10.71A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.71V4.958H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.042l3.007-2.332Z" fill="#FBBC05"/>
-          <path d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.958L3.964 6.29C4.672 4.163 6.656 3.58 9 3.58Z" fill="#EA4335"/>
-        </svg>
-        Googleでログイン
-      </button>
+      <div id="googleBtnContainer" style="display:flex;justify-content:center;margin-bottom:10px;min-height:44px"></div>
       <div class="cancel-link" onclick="document.getElementById('loginModal').classList.remove('open')">あとで</div>
     </div>
   </div>
@@ -848,10 +837,40 @@ main{padding:18px 14px 100px}
 /* ===== アフィリエイト設定 ===== */
 const AFFILIATE_ID = "4B5PG7+F0LMU2+455G+61JSH";
 
+/*
+ * ===== Google OAuth 設定 =====
+ * 取得手順:
+ *   1. https://console.cloud.google.com/ にアクセス
+ *   2. 新規プロジェクト作成（またはすでにあるプロジェクトを選択）
+ *   3. 「APIとサービス」→「認証情報」→「認証情報を作成」→「OAuthクライアントID」
+ *   4. アプリケーションの種類：「ウェブアプリケーション」を選択
+ *   5. 「承認済みのJavaScript生成元」に本番URLとhttp://localhost を追加
+ *      例: https://kanto-taiken.jp と http://localhost:8080
+ *   6. 作成後に表示される「クライアントID」を下記にペースト
+ */
+const GOOGLE_CLIENT_ID = '985383259812-q8jd19mil4q4ccijfukjr77kkpdia41e.apps.googleusercontent.com';
+
 /* ===== スポットデータ ===== */
 let SPOTS = []; // spots.jsonからフェッチします
 
 /* ===== 状態管理 ===== */
+function loadStoredUser() {
+  try {
+    const raw = localStorage.getItem('kt_user');
+    if (!raw) return null;
+    const u = JSON.parse(raw);
+    // 文字化けチェック：emailが正常なASCII文字列かどうかで判定
+    if (!u.email || !/^[\x20-\x7E@.]+$/.test(u.email)) {
+      localStorage.removeItem('kt_user');
+      return null;
+    }
+    return u;
+  } catch(e) {
+    localStorage.removeItem('kt_user');
+    return null;
+  }
+}
+
 let state = {
   area: 'all',
   cat: 'all',
@@ -860,8 +879,8 @@ let state = {
   keyword: '',
   favs: JSON.parse(localStorage.getItem('kt_favs') || '[]'),
   userReviews: JSON.parse(localStorage.getItem('kt_reviews') || '{}'),
-  isLoggedIn: !!localStorage.getItem('kt_user'),
-  user: JSON.parse(localStorage.getItem('kt_user') || 'null'),
+  isLoggedIn: !!loadStoredUser(),
+  user: loadStoredUser(),
   currentPage: 0,
 };
 
@@ -1176,38 +1195,114 @@ function doBook(id) {
   showToast('🎫 アソビューの予約ページへ移動します');
 }
 
-/* ===== ログイン（モック：LocalStorageゲストモード） ===== */
-function openLogin() { document.getElementById('loginModal').classList.add('open'); }
-function doLogin() {
-  const mockUser = { name: 'たいけん 太郎', email: 'guest@example.com' };
-  state.isLoggedIn = true;
-  state.user = mockUser;
-  localStorage.setItem('kt_user', JSON.stringify(mockUser));
-  document.getElementById('loginModal').classList.remove('open');
-  updateAuthUI();
-  showToast('✅ ログインしました（お気に入りは本端末に保存されます）');
+/* ===== Google ログイン ===== */
+function openLogin() {
+  document.getElementById('loginModal').classList.add('open');
+  if (GOOGLE_CLIENT_ID && typeof google !== 'undefined') {
+    setTimeout(renderGoogleButtons, 50);
+  }
 }
+
+function renderGoogleButtons() {
+  const btnConfig = { theme: 'outline', size: 'large', width: 280, text: 'signin_with', locale: 'ja' };
+  ['googleBtnContainer', 'googleBtnContainerMypage'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el && el.children.length === 0) {
+      google.accounts.id.renderButton(el, btnConfig);
+    }
+  });
+}
+
+function initGoogleLogin() {
+  if (!GOOGLE_CLIENT_ID) return;
+  try {
+    google.accounts.id.initialize({
+      client_id: GOOGLE_CLIENT_ID,
+      callback: handleGoogleCredential,
+      auto_select: false,
+      cancel_on_tap_outside: true,
+    });
+    renderGoogleButtons();
+  } catch(e) {
+    console.warn('Google login init error:', e);
+  }
+}
+window.onGoogleLibraryLoad = initGoogleLogin;
+
+function handleGoogleCredential(response) {
+  try {
+    const base64 = response.credential.split('.')[1].replace(/-/g,'+').replace(/_/g,'/');
+    const bytes = Uint8Array.from(atob(base64), c => c.charCodeAt(0));
+    const payload = JSON.parse(new TextDecoder().decode(bytes));
+    const user = {
+      name: payload.name || payload.email,
+      email: payload.email,
+      picture: payload.picture || '',
+    };
+    state.isLoggedIn = true;
+    state.user = user;
+    localStorage.setItem('kt_user', JSON.stringify(user));
+    document.getElementById('loginModal').classList.remove('open');
+    updateAuthUI();
+    showToast('✅ ログインしました');
+  } catch(e) {
+    showToast('⚠️ ログインに失敗しました。再度お試しください。');
+  }
+}
+
+function doLogin() {
+  if (!GOOGLE_CLIENT_ID) {
+    showToast('⚠️ GoogleクライアントIDが未設定です');
+    return;
+  }
+  if (typeof google === 'undefined') {
+    showToast('⚠️ Googleログインの読み込み中です。しばらく後に再試行してください。');
+    return;
+  }
+  try {
+    google.accounts.id.prompt((notification) => {
+      if (notification.isNotDisplayed() || notification.isSkippedMoment()) {
+        showToast('⚠️ ポップアップが表示できませんでした。ブラウザのポップアップ許可を確認してください。');
+      }
+    });
+  } catch(e) {
+    showToast('⚠️ ログインに失敗しました。ページを再読み込みしてください。');
+  }
+}
+
 function doLogout() {
+  if (GOOGLE_CLIENT_ID && typeof google !== 'undefined') {
+    try { google.accounts.id.disableAutoSelect(); } catch(e) {}
+  }
   state.isLoggedIn = false;
   state.user = null;
   localStorage.removeItem('kt_user');
   updateAuthUI();
   showToast('👋 ログアウトしました');
 }
+
 function updateAuthUI() {
   const btn = document.getElementById('authBtn');
   if (state.isLoggedIn && state.user) {
-    btn.textContent = state.user.name.split(' ')[0];
+    btn.textContent = (state.user.email || '').split('@')[0] || 'マイページ';
     btn.className = 'auth-btn logged';
     document.getElementById('mypageLoggedIn').style.display = 'block';
     document.getElementById('mypageLoggedOut').style.display = 'none';
     document.getElementById('displayName').textContent = state.user.name;
     document.getElementById('displayEmail').textContent = state.user.email;
+    const avatarEl = document.querySelector('.user-avatar');
+    if (avatarEl) {
+      avatarEl.innerHTML = state.user.picture
+        ? `<img src="${state.user.picture}" style="width:40px;height:40px;border-radius:50%;object-fit:cover;" referrerpolicy="no-referrer">`
+        : '👤';
+    }
   } else {
     btn.textContent = 'ログイン';
     btn.className = 'auth-btn';
     document.getElementById('mypageLoggedIn').style.display = 'none';
     document.getElementById('mypageLoggedOut').style.display = 'block';
+    const avatarEl = document.querySelector('.user-avatar');
+    if (avatarEl) avatarEl.innerHTML = '👤';
   }
   updateFavCount();
 }
