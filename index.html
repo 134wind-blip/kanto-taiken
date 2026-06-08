@@ -207,18 +207,18 @@ main{padding:18px 14px 100px}
 /* ===== 広告スロット ===== */
 .ad-slot{
   background:var(--surface2);border:1px solid var(--border);
-  border-radius:var(--radius);padding:14px 16px;
+  border-radius:var(--radius);padding:10px 14px;
   margin-bottom:20px;
   display:flex;flex-direction:column;align-items:center;justify-content:center;
-  gap:12px;
+  gap:8px;
 }
 .ad-title{
   font-size:11px;color:var(--gold);font-weight:700;
-  letter-spacing:2px;margin-bottom:2px;
+  letter-spacing:2px;
 }
 .ad-banners{
-  display:flex;flex-direction:column;align-items:center;
-  gap:12px;width:100%;
+  display:flex;justify-content:center;align-items:center;
+  width:100%;
 }
 .ad-banners a{
   display:block;transition:opacity .2s;
@@ -563,7 +563,7 @@ main{padding:18px 14px 100px}
 
 <!-- ===== メインページ：さがす ===== -->
 <main id="pageSearch" class="page active">
-  <!-- 広告スロット①（一休・じゃらんバナー） -->
+  <!-- 広告スロット①（一休バナー） -->
   <div class="ad-slot" id="adTop">
     <div class="ad-title">🏠 宿・ホテル予約（旅の準備） 🏨</div>
     <div class="ad-banners">
@@ -572,12 +572,6 @@ main{padding:18px 14px 100px}
         <img border="0" width="468" height="60" alt="一休.com" src="https://www29.a8.net/svt/bgt?aid=260608759800&wid=002&eno=01&mid=s00000000218001047000&mc=1">
       </a>
       <img border="0" width="1" height="1" src="https://www13.a8.net/0.gif?a8mat=4B5R07+D8ATI2+1OK+68EPD" alt="" style="display:none;">
-
-      <!-- じゃらん (120x60) -->
-      <a href="https://px.a8.net/svt/ejp?a8mat=4B5OO2+1GE6SA+14CS+6C9LD" rel="nofollow">
-        <img border="0" width="120" height="60" alt="じゃらんnet" src="https://www29.a8.net/svt/bgt?aid=260605730088&wid=002&eno=01&mid=s00000005230001065000&mc=1">
-      </a>
-      <img border="0" width="1" height="1" src="https://www14.a8.net/0.gif?a8mat=4B5OO2+1GE6SA+14CS+6C9LD" alt="" style="display:none;">
     </div>
   </div>
 
@@ -648,16 +642,10 @@ main{padding:18px 14px 100px}
     条件に合う体験が見つかりませんでした。<br>エリア・カテゴリ・キーワードを変えてみてください。
   </div>
 
-  <!-- 広告スロット②（一休・じゃらんバナー） -->
+  <!-- 広告スロット②（じゃらんバナー） -->
   <div class="ad-slot" id="adBottom" style="margin-top:10px">
     <div class="ad-title">🏠 宿・ホテル予約（旅の準備） 🏨</div>
     <div class="ad-banners">
-      <!-- 一休 (468x60) -->
-      <a href="https://px.a8.net/svt/ejp?a8mat=4B5R07+D8ATI2+1OK+68EPD" rel="nofollow">
-        <img border="0" width="468" height="60" alt="一休.com" src="https://www29.a8.net/svt/bgt?aid=260608759800&wid=002&eno=01&mid=s00000000218001047000&mc=1">
-      </a>
-      <img border="0" width="1" height="1" src="https://www13.a8.net/0.gif?a8mat=4B5R07+D8ATI2+1OK+68EPD" alt="" style="display:none;">
-
       <!-- じゃらん (120x60) -->
       <a href="https://px.a8.net/svt/ejp?a8mat=4B5OO2+1GE6SA+14CS+6C9LD" rel="nofollow">
         <img border="0" width="120" height="60" alt="じゃらんnet" src="https://www29.a8.net/svt/bgt?aid=260605730088&wid=002&eno=01&mid=s00000005230001065000&mc=1">
