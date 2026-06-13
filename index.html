@@ -672,24 +672,8 @@ main{padding:18px 14px 100px}
 
 <!-- ===== メインページ：予約 ===== -->
 <main id="pageBook" class="page" style="padding:18px 14px 100px">
-  <div class="sec-label">BOOKING</div>
-  <div class="booking-section">
-    <div style="font-size:48px;margin-bottom:16px">📅</div>
-    <div style="font-size:15px;font-weight:700;color:var(--text);margin-bottom:8px;font-family:'Noto Serif JP',serif">アソビューで予約する</div>
-    <p style="font-size:12px;color:var(--muted);line-height:1.8;margin-bottom:20px">
-      各体験の「予約する」ボタンからアソビューの<br>予約ページへ移動します。<br>アソビューのアカウントで安心・簡単に予約できます。
-    </p>
-    <p style="font-size:10px;color:var(--muted);line-height:1.6;margin-bottom:20px;max-width:320px;margin-left:auto;margin-right:auto;">
-      ※掲載中の体験内容や価格はアソビュー！の登録情報に基づきますが、時期や店舗の都合により、プラン内容の変更や一時的な非表示が発生する場合があります。
-    </p>
-    <!-- アソビューアフィリエイトURL設置箇所 -->
-    <!-- 以下のhrefを正式なアフィリエイトURLに変更してください -->
-    <a href="https://www.asoview.com/" target="_blank" rel="noopener"
-       style="display:inline-block;background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:var(--bg);padding:12px 28px;border-radius:20px;font-size:13px;font-weight:700;text-decoration:none;letter-spacing:.5px">
-      アソビューTOPへ
-    </a>
-    <p style="font-size:10px;color:var(--muted);margin-top:16px">※当サイトはアソビューのアフィリエイトプログラムに参加しています</p>
-  </div>
+  <div class="sec-label">BOOKING SCHEDULE</div>
+  <div id="bookingListContainer"></div>
 </main>
 
 <!-- ===== メインページ：マイページ ===== -->
@@ -707,12 +691,21 @@ main{padding:18px 14px 100px}
         <button class="logout-btn" onclick="doLogout()">ログアウト</button>
       </div>
       <div class="divider"></div>
-      <div class="sec-label">SAVED COUNT</div>
-      <div style="background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px;margin-bottom:14px;display:flex;align-items:center;gap:12px">
-        <span style="font-size:28px">❤️</span>
-        <div>
-          <div style="font-size:22px;font-weight:700;color:var(--gold)" id="favCount">0</div>
-          <div style="font-size:11px;color:var(--muted)">お気に入り件数</div>
+      <div class="sec-label">MY DATA</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;">
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px;display:flex;align-items:center;gap:8px">
+          <span style="font-size:20px">❤️</span>
+          <div>
+            <div style="font-size:18px;font-weight:700;color:var(--gold)" id="favCount">0</div>
+            <div style="font-size:10px;color:var(--muted)">お気に入り</div>
+          </div>
+        </div>
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px;display:flex;align-items:center;gap:8px">
+          <span style="font-size:20px">📅</span>
+          <div>
+            <div style="font-size:18px;font-weight:700;color:var(--gold)" id="bookingCount">0</div>
+            <div style="font-size:10px;color:var(--muted)">予定スケジュール</div>
+          </div>
         </div>
       </div>
     </div>
@@ -755,6 +748,7 @@ main{padding:18px 14px 100px}
   </div>
   <div class="nav-item" id="nav2" onclick="switchPage(2)">
     <span class="nav-icon">📅</span><span>予約</span>
+    <span class="nav-badge" id="bookingBadge">0</span>
   </div>
   <div class="nav-item" id="nav3" onclick="switchPage(3)">
     <span class="nav-icon">👤</span><span>マイページ</span>
@@ -1118,6 +1112,29 @@ function openDetail(id) {
     <div style="font-size:10px;color:var(--muted);line-height:1.5;text-align:center;margin-bottom:14px;padding:0 8px;">
       ※時期や店舗の状況により、アソビュー！上でプランが表示されない、または体験内容・価格が変更されている場合があります。
     </div>
+    
+    <!-- カレンダー登録フォーム -->
+    <div class="divider" style="margin:14px 0;"></div>
+    <div style="background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px;margin-bottom:14px;">
+      <div style="font-size:11px;font-weight:700;color:var(--text);margin-bottom:8px;display:flex;align-items:center;gap:6px;">
+        📅 カレンダーに予定日を登録
+      </div>
+      <div style="display:flex;gap:6px;margin-bottom:8px;">
+        <div style="flex:1;">
+          <span style="font-size:9px;color:var(--muted);display:block;margin-bottom:2px;">予定日</span>
+          <input type="date" id="bookDate-${s.id}" class="form-input" style="padding:6px;font-size:11px;" value="${new Date().toISOString().split('T')[0]}">
+        </div>
+        <div style="width:90px;">
+          <span style="font-size:9px;color:var(--muted);display:block;margin-bottom:2px;">予定時間</span>
+          <input type="time" id="bookTime-${s.id}" class="form-input" style="padding:6px;font-size:11px;" value="10:00">
+        </div>
+      </div>
+      <button class="auth-btn" style="width:100%;background:rgba(200,169,110,0.12);border-color:var(--gold-dark);color:var(--gold);padding:6px;font-size:11px;" 
+        onclick="addSchedule(${s.id})">
+        スケジュールに追加
+      </button>
+    </div>
+    
     <div class="divider"></div>
     <div class="sec-label" style="margin-bottom:12px">REVIEWS <em>${allRevs.length}件</em></div>
     <div class="review-list">${revHTML}</div>
@@ -1316,7 +1333,240 @@ function switchPage(idx) {
     document.getElementById('nav'+i).className = 'nav-item' + (i === idx ? ' active' : '');
   });
   if (idx === 1) renderFavs();
+  if (idx === 2) renderBookings();
   if (idx === 3) updateAuthUI();
+}
+
+/* ===== スケジュール・カレンダー管理ロジック ===== */
+function addSchedule(id) {
+  const dateInput = document.getElementById(`bookDate-${id}`);
+  const timeInput = document.getElementById(`bookTime-${id}`);
+  if (!dateInput || !timeInput) return;
+  const date = dateInput.value;
+  const time = timeInput.value;
+  if (!date || !time) {
+    showToast('⚠️ 日付と時間を選択してください');
+    return;
+  }
+  
+  const exists = state.bookings.some(b => b.spotId === id && b.date === date);
+  if (exists) {
+    showToast('⚠️ すでに同じ日に登録されています');
+    return;
+  }
+  
+  state.bookings.push({
+    spotId: id,
+    date: date,
+    time: time,
+    createdAt: new Date().toISOString()
+  });
+  
+  state.bookings.sort((a, b) => new Date(`${a.date}T${a.time}`) - new Date(`${b.date}T${b.time}`));
+  localStorage.setItem('kt_bookings', JSON.stringify(state.bookings));
+  showToast('📅 スケジュールに追加しました！');
+  
+  updateBookingBadge();
+  updateBookingCount();
+  if (state.currentPage === 2) renderBookings();
+}
+
+function removeSchedule(index) {
+  if (confirm('この予定をスケジュールから削除しますか？')) {
+    state.bookings.splice(index, 1);
+    localStorage.setItem('kt_bookings', JSON.stringify(state.bookings));
+    renderBookings();
+    updateBookingBadge();
+    updateBookingCount();
+    showToast('🗑️ スケジュールから削除しました');
+  }
+}
+
+function renderBookings() {
+  const container = document.getElementById('bookingListContainer');
+  if (!container) return;
+  
+  if (state.bookings.length === 0) {
+    container.innerHTML = `
+      <div class="booking-section">
+        <div style="font-size:48px;margin-bottom:16px">📅</div>
+        <div style="font-size:15px;font-weight:700;color:var(--text);margin-bottom:8px;font-family:'Noto Serif JP',serif">スケジュールは未登録です</div>
+        <p style="font-size:12px;color:var(--muted);line-height:1.8;margin-bottom:20px">
+          体験詳細画面の「カレンダーに予定日を登録」から、<br>予定日を決めて保存できます。<br>
+          アソビューでの本予約前に計画を立てる際にご利用ください。
+        </p>
+        <p style="font-size:10px;color:var(--muted);line-height:1.6;margin-bottom:20px;max-width:320px;margin-left:auto;margin-right:auto;">
+          ※当サイトはアソビューのアフィリエイトプログラムに参加しています。アソビューでのご予約は各体験の「予約する」ボタンをご利用ください。
+        </p>
+        <a href="#" onclick="event.preventDefault();switchPage(0)"
+           style="display:inline-block;background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:var(--bg);padding:12px 28px;border-radius:20px;font-size:13px;font-weight:700;text-decoration:none;letter-spacing:.5px">
+          体験を探しにいく
+        </a>
+      </div>
+    `;
+    return;
+  }
+  
+  let html = `<div style="display:flex;flex-direction:column;gap:16px;">`;
+  state.bookings.forEach((b, index) => {
+    const s = SPOTS.find(x => x.id === b.spotId);
+    if (!s) return;
+    const finalBookUrl = getAsoviewUrl(s.bookUrl);
+    const googleUrl = getGoogleCalendarUrl(s, b);
+    
+    html += `
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px;position:relative;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;">
+          <span style="font-size:11px;color:var(--gold);font-weight:bold;background:rgba(200,169,110,0.12);padding:3px 8px;border-radius:4px;">
+            📅 ${b.date} ${b.time}〜
+          </span>
+          <button style="background:none;border:none;color:var(--muted);cursor:pointer;font-size:11px;" 
+            onclick="removeSchedule(${index})">削除 ✕</button>
+        </div>
+        <div style="font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--text);margin-bottom:6px;cursor:pointer;"
+          onclick="openDetail(${s.id})">
+          ${s.emoji} ${s.name}
+        </div>
+        <div style="font-size:11px;color:var(--muted);margin-bottom:12px;line-height:1.4;">
+          📍 住所: ${s.address}<br>
+          💰 価格: ${s.priceLabel} (${s.unit})
+        </div>
+        
+        <div style="display:flex;gap:6px;margin-bottom:12px;">
+          <a href="${googleUrl}" target="_blank" rel="noopener" class="auth-btn" 
+             style="flex:1;text-align:center;text-decoration:none;background:#4285F4;color:#fff;border:none;padding:6px 0;font-size:10px;font-weight:bold;display:flex;align-items:center;justify-content:center;gap:4px;">
+             Googleカレンダー
+          </a>
+          <button onclick="downloadIcsFile(${s.id}, '${b.date}', '${b.time}')" class="auth-btn" 
+             style="flex:1;background:var(--surface2);border-color:var(--border2);color:var(--text2);padding:6px 0;font-size:10px;font-weight:bold;display:flex;align-items:center;justify-content:center;gap:4px;">
+             iPhoneカレンダー
+          </button>
+        </div>
+        
+        <a href="${finalBookUrl}" target="_blank" rel="noopener" class="book-btn" 
+           style="display:block;text-align:center;text-decoration:none;font-size:12px;padding:8px 0;border-radius:20px;margin-bottom:14px;">
+           🎫 アソビューで本予約に進む
+        </a>
+        
+        <div style="margin-top:14px;border-top:1px dashed var(--border);padding-top:12px;">
+          <div style="font-size:10px;color:var(--muted);font-weight:bold;margin-bottom:8px;letter-spacing:1px;">
+            💡 ${s.area}エリアの周辺おすすめ情報（旅の準備）
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px;">
+            <a href="https://px.a8.net/svt/ejp?a8mat=4B5R07+D8ATI2+1OK+68EPD&a8ejpredirect=${encodeURIComponent('https://www.ikyu.com/area/r/' + getIkyuAreaCode(s.area) + '/')}" 
+               target="_blank" rel="nofollow" 
+               style="background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:8px;text-decoration:none;color:inherit;display:block;">
+              <span style="font-size:11px;font-weight:bold;color:var(--gold);display:block;margin-bottom:2px;">🏨 一休で高級ホテル</span>
+              <span style="font-size:9px;color:var(--muted);line-height:1.2;display:block;">${s.area}周辺の厳選宿</span>
+            </a>
+            <a href="https://px.a8.net/svt/ejp?a8mat=4B5OO2+1GE6SA+14CS+6C9LD&a8ejpredirect=${encodeURIComponent('https://www.jalan.net/theme/kanto/' + getJalanAreaCode(s.area) + '/')}" 
+               target="_blank" rel="nofollow" 
+               style="background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:8px;text-decoration:none;color:inherit;display:block;">
+              <span style="font-size:11px;font-weight:bold;color:var(--gold);display:block;margin-bottom:2px;">🏨 じゃらんでお得な宿</span>
+              <span style="font-size:9px;color:var(--muted);line-height:1.2;display:block;">${s.area}の人気ホテル</span>
+            </a>
+          </div>
+          ${renderNearSpots(s.area, s.id)}
+        </div>
+      </div>
+    `;
+  });
+  html += `</div>`;
+  container.innerHTML = html;
+}
+
+function getGoogleCalendarUrl(spot, booking) {
+  const title = `【かんとうたいけん】${spot.name}`;
+  const dateStr = booking.date.replace(/-/g, '');
+  const timeStr = booking.time.replace(/:/g, '') + '00';
+  const startDateTime = `${dateStr}T${timeStr}`;
+  const endHour = (parseInt(booking.time.split(':')[0]) + 2).toString().padStart(2, '0');
+  const endDateTime = `${dateStr}T${endHour}${booking.time.split(':')[1]}00`;
+  const dates = `${startDateTime}/${endDateTime}`;
+  
+  const finalBookUrl = getAsoviewUrl(spot.bookUrl);
+  const ikyuUrl = `https://px.a8.net/svt/ejp?a8mat=4B5R07+D8ATI2+1OK+68EPD&a8ejpredirect=https%3A%2F%2Fwww.ikyu.com%2F`;
+  const details = `ご予約の体験詳細・アソビュー予約ページはこちら：\n${finalBookUrl}\n\n近くのプレミアム宿予約（一休.com）：\n${ikyuUrl}\n\n※当サイトはアフィリエイトリンクを経由してアソビュー・一休に遷移します。`;
+  
+  return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${dates}&details=${encodeURIComponent(details)}&location=${encodeURIComponent(spot.address)}&sf=true&output=xml`;
+}
+
+function downloadIcsFile(spotId, date, time) {
+  const s = SPOTS.find(x => x.id === spotId);
+  if (!s) return;
+  const title = `【かんとうたいけん】${s.name}`;
+  const finalBookUrl = getAsoviewUrl(s.bookUrl);
+  const ikyuUrl = `https://px.a8.net/svt/ejp?a8mat=4B5R07+D8ATI2+1OK+68EPD&a8ejpredirect=https%3A%2F%2Fwww.ikyu.com%2F`;
+  const details = `ご予約の体験詳細・アソビュー予約ページはこちら：\\n${finalBookUrl}\\n\\n近くのプレミアム宿予約（一休.com）：\\n${ikyuUrl}`;
+  
+  const dtStamp = new Date().toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+  const startStr = date.replace(/-/g, '') + 'T' + time.replace(/:/g, '') + '00';
+  const endHour = (parseInt(time.split(':')[0]) + 2).toString().padStart(2, '0');
+  const endStr = date.replace(/-/g, '') + 'T' + endHour + time.split(':')[1] + '00';
+  
+  const icsLines = [
+    'BEGIN:VCALENDAR',
+    'VERSION:2.0',
+    'PRODID:-//Kanto Taiken//Calendar Sync//JA',
+    'CALSCALE:GREGORIAN',
+    'METHOD:PUBLISH',
+    'BEGIN:VEVENT',
+    `DTSTAMP:${dtStamp}`,
+    `DTSTART;TZID=Asia/Tokyo:${startStr}`,
+    `DTEND;TZID=Asia/Tokyo:${endStr}`,
+    `SUMMARY:${title}`,
+    `LOCATION:${s.address}`,
+    `DESCRIPTION:${details}`,
+    'STATUS:CONFIRMED',
+    'SEQUENCE:0',
+    'END:VEVENT',
+    'END:VCALENDAR'
+  ].join('\r\n');
+  
+  const blob = new Blob([icsLines], { type: 'text/calendar;charset=utf-8' });
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(blob);
+  link.download = `kanto_taiken_${spotId}.ics`;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  showToast('🍏 カレンダーファイルをダウンロードしました');
+}
+
+function getIkyuAreaCode(area) {
+  const dict = {
+    '浅草': '130104', '鎌倉': '140203', '日光': '080201',
+    '箱根': '140401', '川越': '110101', '横浜': '140101', '秩父': '110301',
+  };
+  return dict[area] || '';
+}
+
+function getJalanAreaCode(area) {
+  const dict = {
+    '浅草': '137400', '鎌倉': '140800', '日光': '080900',
+    '箱根': '141600', '川越': '110200', '横浜': '140200', '秩父': '110500',
+  };
+  return dict[area] || '';
+}
+
+function renderNearSpots(area, currentSpotId) {
+  const near = SPOTS.filter(s => s.area === area && s.id !== currentSpotId);
+  if (near.length === 0) return '';
+  const s = near[Math.floor(Math.random() * near.length)];
+  
+  return `
+    <div style="margin-top:12px;background:rgba(200,169,110,0.04);border:1px solid var(--border);border-radius:var(--radius-sm);padding:8px;cursor:pointer;" 
+         onclick="event.stopPropagation();closeModal(event,'detailModal');openDetail(${s.id})">
+      <span style="font-size:10px;color:var(--gold);font-weight:bold;display:block;margin-bottom:4px;">✨ このエリアの別のおすすめ体験</span>
+      <div style="display:flex;gap:8px;align-items:center;">
+        <img src="${s.image}" style="width:30px;height:30px;object-fit:cover;border-radius:4px;" alt="${s.name}">
+        <div style="flex:1;min-width:0;">
+          <div style="font-size:10px;font-weight:bold;color:var(--text);line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${s.emoji} ${s.name}</div>
+          <div style="font-size:8px;color:var(--muted);">${s.priceLabel} / ${s.unit}</div>
+        </div>
+      </div>
+    </div>
+  `;
 }
 
 /* ===== モーダル共通 ===== */
@@ -1372,6 +1622,7 @@ async function init() {
     
     renderSpots();
     updateFavBadge();
+    updateBookingBadge();
     updateAuthUI();
     handleHashRoute();
     
