@@ -11,8 +11,6 @@
 <link rel="icon" type="image/png" href="favicon.png">
 <meta property="og:url" content="https://kanto-taiken.jp/">
 <meta property="og:image" content="https://kanto-taiken.jp/ogp.jpg">
-<!-- Google Identity Services (Google Login) -->
-<script src="https://accounts.google.com/gsi/client" async defer></script>
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3614842848028795" crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -714,8 +712,8 @@ main{padding:18px 14px 100px}
       <div style="text-align:center;padding:40px 20px">
         <div style="font-size:48px;margin-bottom:16px">👤</div>
         <div style="font-family:'Noto Serif JP',serif;font-size:16px;font-weight:700;color:var(--text);margin-bottom:8px">ログインして体験を保存しよう</div>
-        <p style="font-size:12px;color:var(--muted);line-height:1.8;margin-bottom:20px">Googleアカウントでかんたんログイン。<br>お気に入りの体験を保存できます。</p>
-        <div id="googleBtnContainerMypage" style="display:flex;justify-content:center;min-height:44px"></div>
+        <p style="font-size:12px;color:var(--muted);line-height:1.8;margin-bottom:20px">お名前とメールアドレスで簡単ログイン。<br>お気に入りの体験を保存できます。</p>
+        <button class="submit-btn" onclick="openLogin()" style="max-width:240px;margin:0 auto;display:block">ログインする</button>
       </div>
     </div>
     
@@ -776,9 +774,17 @@ main{padding:18px 14px 100px}
     <div class="login-modal">
       <div class="login-icon">⛩️</div>
       <div class="login-title">かんとうたいけんへようこそ</div>
-      <div class="login-desc">Googleアカウントでかんたんにログイン。<br>お気に入りの体験を保存したり、<br>レビューを投稿できます。</div>
-      <div id="googleBtnContainer" style="display:flex;justify-content:center;margin-bottom:10px;min-height:44px"></div>
-      <div class="cancel-link" onclick="document.getElementById('loginModal').classList.remove('open')">あとで</div>
+      <div class="login-desc">お名前とメールアドレスを入力してください。<br>お気に入りの保存や予定管理に使えます。</div>
+      <div class="form-group" style="text-align:left">
+        <div class="form-label">お名前（ニックネーム）</div>
+        <input class="form-input" id="loginName" type="text" placeholder="例：タロウ">
+      </div>
+      <div class="form-group" style="text-align:left">
+        <div class="form-label">メールアドレス</div>
+        <input class="form-input" id="loginEmail" type="email" placeholder="例：taro@example.com">
+      </div>
+      <button class="submit-btn" style="margin-top:8px" onclick="doSimpleLogin()">ログインする</button>
+      <div class="cancel-link" style="margin-top:12px;display:block" onclick="document.getElementById('loginModal').classList.remove('open')">あとで</div>
     </div>
   </div>
 </div>
@@ -831,18 +837,6 @@ main{padding:18px 14px 100px}
 /* ===== アフィリエイト設定 ===== */
 const AFFILIATE_ID = "4B5PG7+F0LMU2+455G+61JSH";
 
-/*
- * ===== Google OAuth 設定 =====
- * 取得手順:
- *   1. https://console.cloud.google.com/ にアクセス
- *   2. 新規プロジェクト作成（またはすでにあるプロジェクトを選択）
- *   3. 「APIとサービス」→「認証情報」→「認証情報を作成」→「OAuthクライアントID」
- *   4. アプリケーションの種類：「ウェブアプリケーション」を選択
- *   5. 「承認済みのJavaScript生成元」に本番URLとhttp://localhost を追加
- *      例: https://kanto-taiken.jp と http://localhost:8080
- *   6. 作成後に表示される「クライアントID」を下記にペースト
- */
-const GOOGLE_CLIENT_ID = '985383259812-q8jd19mil4q4ccijfukjr77kkpdia41e.apps.googleusercontent.com';
 
 /* ===== スポットデータ ===== */
 let SPOTS = []; // spots.jsonからフェッチします
@@ -865,14 +859,25 @@ function loadStoredUser() {
   }
 }
 
+function safeJsonParse(key, defaultVal) {
+  try {
+    const raw = localStorage.getItem(key);
+    return raw ? JSON.parse(raw) : defaultVal;
+  } catch(e) {
+    localStorage.removeItem(key);
+    return defaultVal;
+  }
+}
+
 let state = {
   area: 'all',
   cat: 'all',
   price: 'all',
   sort: 'popular',
   keyword: '',
-  favs: JSON.parse(localStorage.getItem('kt_favs') || '[]'),
-  userReviews: JSON.parse(localStorage.getItem('kt_reviews') || '{}'),
+  favs: safeJsonParse('kt_favs', []),
+  userReviews: safeJsonParse('kt_reviews', {}),
+  bookings: safeJsonParse('kt_bookings', []),
   isLoggedIn: !!loadStoredUser(),
   user: loadStoredUser(),
   currentPage: 0,
@@ -996,6 +1001,19 @@ function updateFavBadge() {
 function updateFavCount() {
   const el = document.getElementById('favCount');
   if (el) el.textContent = state.favs.length;
+}
+
+function updateBookingBadge() {
+  const badge = document.getElementById('bookingBadge');
+  if (!badge) return;
+  const n = state.bookings.length;
+  badge.textContent = n;
+  badge.className = 'nav-badge' + (n > 0 ? ' show' : '');
+}
+
+function updateBookingCount() {
+  const el = document.getElementById('bookingCount');
+  if (el) el.textContent = state.bookings.length;
 }
 
 /* ===== 操作ハンドラ ===== */
@@ -1212,85 +1230,32 @@ function doBook(id) {
   showToast('🎫 アソビューの予約ページへ移動します');
 }
 
-/* ===== Google ログイン ===== */
+/* ===== ログイン（シンプルフォーム） ===== */
 function openLogin() {
+  const nameEl = document.getElementById('loginName');
+  const emailEl = document.getElementById('loginEmail');
+  if (nameEl) nameEl.value = '';
+  if (emailEl) emailEl.value = '';
   document.getElementById('loginModal').classList.add('open');
-  if (GOOGLE_CLIENT_ID && typeof google !== 'undefined') {
-    setTimeout(renderGoogleButtons, 50);
-  }
 }
 
-function renderGoogleButtons() {
-  const btnConfig = { theme: 'outline', size: 'large', width: 280, text: 'signin_with', locale: 'ja' };
-  ['googleBtnContainer', 'googleBtnContainerMypage'].forEach(id => {
-    const el = document.getElementById(id);
-    if (el && el.children.length === 0) {
-      google.accounts.id.renderButton(el, btnConfig);
-    }
-  });
-}
-
-function initGoogleLogin() {
-  if (!GOOGLE_CLIENT_ID) return;
-  try {
-    google.accounts.id.initialize({
-      client_id: GOOGLE_CLIENT_ID,
-      callback: handleGoogleCredential,
-      auto_select: false,
-      cancel_on_tap_outside: true,
-    });
-    renderGoogleButtons();
-  } catch(e) {
-    console.warn('Google login init error:', e);
+function doSimpleLogin() {
+  const name = document.getElementById('loginName').value.trim();
+  const email = document.getElementById('loginEmail').value.trim();
+  if (!name) { showToast('⚠️ お名前を入力してください'); return; }
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    showToast('⚠️ 正しいメールアドレスを入力してください'); return;
   }
-}
-window.onGoogleLibraryLoad = initGoogleLogin;
-
-function handleGoogleCredential(response) {
-  try {
-    const base64 = response.credential.split('.')[1].replace(/-/g,'+').replace(/_/g,'/');
-    const bytes = Uint8Array.from(atob(base64), c => c.charCodeAt(0));
-    const payload = JSON.parse(new TextDecoder().decode(bytes));
-    const user = {
-      name: payload.name || payload.email,
-      email: payload.email,
-      picture: payload.picture || '',
-    };
-    state.isLoggedIn = true;
-    state.user = user;
-    localStorage.setItem('kt_user', JSON.stringify(user));
-    document.getElementById('loginModal').classList.remove('open');
-    updateAuthUI();
-    showToast('✅ ログインしました');
-  } catch(e) {
-    showToast('⚠️ ログインに失敗しました。再度お試しください。');
-  }
-}
-
-function doLogin() {
-  if (!GOOGLE_CLIENT_ID) {
-    showToast('⚠️ GoogleクライアントIDが未設定です');
-    return;
-  }
-  if (typeof google === 'undefined') {
-    showToast('⚠️ Googleログインの読み込み中です。しばらく後に再試行してください。');
-    return;
-  }
-  try {
-    google.accounts.id.prompt((notification) => {
-      if (notification.isNotDisplayed() || notification.isSkippedMoment()) {
-        showToast('⚠️ ポップアップが表示できませんでした。ブラウザのポップアップ許可を確認してください。');
-      }
-    });
-  } catch(e) {
-    showToast('⚠️ ログインに失敗しました。ページを再読み込みしてください。');
-  }
+  const user = { name, email, picture: '' };
+  state.isLoggedIn = true;
+  state.user = user;
+  localStorage.setItem('kt_user', JSON.stringify(user));
+  document.getElementById('loginModal').classList.remove('open');
+  updateAuthUI();
+  showToast('✅ ログインしました');
 }
 
 function doLogout() {
-  if (GOOGLE_CLIENT_ID && typeof google !== 'undefined') {
-    try { google.accounts.id.disableAutoSelect(); } catch(e) {}
-  }
   state.isLoggedIn = false;
   state.user = null;
   localStorage.removeItem('kt_user');
@@ -1615,31 +1580,38 @@ function openContact() {
 
 /* ===== 初期化 ===== */
 async function init() {
+  // ① データ取得（失敗時のみトースト表示）
   try {
     const response = await fetch('./spots.json');
-    if (!response.ok) throw new Error('Failed to fetch spots.json');
+    if (!response.ok) throw new Error('HTTP ' + response.status);
     SPOTS = await response.json();
-    
-    renderSpots();
-    updateFavBadge();
-    updateBookingBadge();
-    updateAuthUI();
-    handleHashRoute();
-    
-    // A8.net インプレッション計測用ピクセルの挿入
-    if (AFFILIATE_ID) {
-      const a8img = document.createElement('img');
-      a8img.border = "0";
-      a8img.width = "1";
-      a8img.height = "1";
-      a8img.src = `https://www13.a8.net/0.gif?a8mat=${AFFILIATE_ID}`;
-      a8img.alt = "";
-      a8img.style.display = "none";
-      document.body.appendChild(a8img);
-    }
   } catch (error) {
-    console.error('Error loading spots:', error);
+    console.error('spots.json の読み込みに失敗しました:', error);
     showToast('⚠️ データの読み込みに失敗しました');
+    return;
+  }
+
+  // ② UI 初期化（各関数の失敗がトーストに出ないよう個別 try-catch）
+  const uiTasks = [
+    renderSpots,
+    updateFavBadge,
+    updateBookingBadge,
+    updateAuthUI,
+    handleHashRoute,
+  ];
+  for (const fn of uiTasks) {
+    try { fn(); } catch(e) { console.error(fn.name + ' failed:', e); }
+  }
+
+  // ③ A8.net インプレッション計測ピクセル
+  if (AFFILIATE_ID) {
+    try {
+      const a8img = document.createElement('img');
+      a8img.border = "0"; a8img.width = "1"; a8img.height = "1";
+      a8img.src = `https://www13.a8.net/0.gif?a8mat=${AFFILIATE_ID}`;
+      a8img.alt = ""; a8img.style.display = "none";
+      document.body.appendChild(a8img);
+    } catch(e) {}
   }
 }
 init();
